@@ -1,0 +1,17 @@
+# lock
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# vite-ssg
+.vite-ssg-dist
+.vite-ssg-temp
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+
+# intellij stuff
+.idea/

@@ -17,6 +17,7 @@ declare module 'vue' {
     ICarbonLogoGithub: typeof import('virtual:vite-icons/carbon/logo-github')['default']
     ICarbonMoon: typeof import('virtual:vite-icons/carbon/moon')['default']
     ICarbonSun: typeof import('virtual:vite-icons/carbon/sun')['default']
+    ICarbonWarning: typeof import('virtual:vite-icons/carbon/warning')['default']
     IIconParkOutlineSorcererHat: typeof import('virtual:vite-icons/icon-park-outline/sorcerer-hat')['default']
     NavMenu: typeof import('./src/components/NavMenu.vue')['default']
     README: typeof import('./src/components/README.md')['default']

@@ -37,7 +37,7 @@ export interface InertiaAnimationOptions {
  */
 export function createInertiaAnimation(options: InertiaAnimationOptions) {
   return {
-    playAnimation: false,
+    playAnimation: true,
     /**
      * 初速度
      */

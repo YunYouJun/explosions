@@ -1,3 +1,6 @@
+$badge-size: 20rem;
+$badge-thickness: 10px;
+
 .badge-container {
   display: flex;
   justify-content: center;
@@ -8,40 +11,40 @@
   &:active {
     cursor: grabbing;
   }
+
+
+  .badge {
+    position: relative;
+
+    width: $badge-size;
+    height: $badge-size;
+    transform-style: preserve-3d;
+  }
+
+
+  .front,
+  .back {
+    width: $badge-size;
+    height: $badge-size;
+    background-color: gray;
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .front {
+    background: linear-gradient(to right, #6441a5, #2a0845);
+    transform: translateZ($badge-thickness);
+  }
+
+  .back {
+    background: linear-gradient(to right, #ffcc33, #ffb347);
+    // transform: rotateY(180deg);
+    transform: translateZ(-$badge-thickness);
+  }
 }
 
-$badge-size: 20rem;
 
-.badge {
-  position: relative;
-
-  width: $badge-size;
-  height: $badge-size;
-  transform-style: preserve-3d;
-}
-
-.front,
-.back {
-  width: $badge-size;
-  height: $badge-size;
-  background-color: gray;
-
-  border-radius: 50%;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-$badge-thickness: 10px;
-
-.front {
-  background: linear-gradient(to right, #6441a5, #2a0845);
-  transform: translateZ($badge-thickness);
-}
-
-.back {
-  background: linear-gradient(to right, #ffcc33, #ffb347);
-  // transform: rotateY(180deg);
-  transform: translateZ(-$badge-thickness);
-}

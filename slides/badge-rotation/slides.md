@@ -1,6 +1,6 @@
 ---
 theme: default
-background: http://alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com/antfincdn/IMMDPch0s0/code-bg.jpg
+background: https://upyun.yunyoujun.cn/images/code-bg.jpg
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -259,7 +259,7 @@ if (positiveRemainder >= 90 && positiveRemainder < 180) {
 - 右半外：加速度向屏幕内，为负数 <ic-round-minus class="inline"/>
 - 右半内：加速度向屏幕外，为正数 <ic-round-plus class="inline"/>
 
-<img border="rounded" width="180" src="http://alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com/antfincdn/XORmlWbint/badge-rotation-middle.jpg"> 
+<img border="rounded" width="180" src="https://upyun.yunyoujun.cn/images/badge-rotation-middle.jpg" />
 </div>
 
 </div>
@@ -528,12 +528,12 @@ if (Math.abs(deltaX) < 5 && deltaTime < 200) {
 <noto-bug class="inline"/>
 <noto-bug class="inline"/> 
 <noto-bug class="inline"/> 
-<img class="inline" width="20" src="http://alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com/antfincdn/zCyzd1akjp/jian-yu.jpg">
-<img class="inline" width="20" src="http://alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com/antfincdn/zCyzd1akjp/jian-yu.jpg">
-<img class="inline" width="20" src="http://alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com/antfincdn/zCyzd1akjp/jian-yu.jpg">
-<img class="inline" width="20" src="http://alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com/antfincdn/zCyzd1akjp/jian-yu.jpg">
-<img class="inline" width="20" src="http://alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com/antfincdn/zCyzd1akjp/jian-yu.jpg">
-<img class="inline" width="20" src="http://alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com/antfincdn/zCyzd1akjp/jian-yu.jpg">
+<img class="inline" width="20" src="https://upyun.yunyoujun.cn/images/jian-yu-avatar.jpg">
+<img class="inline" width="20" src="https://upyun.yunyoujun.cn/images/jian-yu-avatar.jpg">
+<img class="inline" width="20" src="https://upyun.yunyoujun.cn/images/jian-yu-avatar.jpg">
+<img class="inline" width="20" src="https://upyun.yunyoujun.cn/images/jian-yu-avatar.jpg">
+<img class="inline" width="20" src="https://upyun.yunyoujun.cn/images/jian-yu-avatar.jpg">
+<img class="inline" width="20" src="https://upyun.yunyoujun.cn/images/jian-yu-avatar.jpg">
 </div>
 </div>
 

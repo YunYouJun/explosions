@@ -15,6 +15,8 @@
 
 [slides](https://badge-rotation.explosion.yunyoujun.cn)
 
+> see `slides/badge-rotation/`
+
 ## 编写 Slides
 
 ```bash

@@ -1,5 +1,6 @@
 
 {
+  "name": "badge-rotation",
   "private": true,
   "scripts": {
     "dev": "slidev --open",
@@ -11,5 +12,7 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
-  "name": "badge-rotation"
+  "slidev": {
+    "colorSchema": "dark"
+  }
 }

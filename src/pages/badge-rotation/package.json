@@ -1,4 +1,14 @@
 {
   "name": "badge-rotation",
-  "description": "旋转惯性动画"
+  "description": "旋转惯性动画",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.22.7",
+    "@slidev/theme-default": "*"
+  }
 }

@@ -1,6 +1,6 @@
 ---
 theme: default
-background: https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9
+background: http://alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com/antfincdn/IMMDPch0s0/code-bg.jpg
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -16,14 +16,12 @@ title: 徽章旋转动画
 
 「🐜 蚂蚁森林 🌲」神奇动物
 
-☁️ 雲游
+☁️ 雲游 🎮
 
 <div class="pt-5">
-  <div @click="$slidev.nav.next" class="inline cursor-pointer mb-5 text-red-400 animate-ping" hover="bg-white bg-opacity-10">💥</div>
-  <br/>
   <br/>
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    (∩ ◕_▩ )⊃━☆ Explosion！ <carbon:arrow-right class="inline"/>
+    (∩ ◕_▩ )⊃━☆ Explosion！ <span class="inline cursor-pointer mb-5 text-red-400 animate-ping" hover="bg-white bg-opacity-10">💥</span>
   </span>
 </div>
 
@@ -561,15 +559,18 @@ if (Math.abs(deltaX) < 5 && deltaTime < 200) {
 
 - 网页 API [`deviceorientation`](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/deviceorientation_event) iOS 兼容问题
 
+```ts
+window.addEventListener("deviceorientation", (event) => {
+    ...
+    // gamma: 从左到右
+    let deltaGamma = event.gamma - this.lastGamma;
+    ...
+}, true);
+```
+
 > 子贱师兄发现 iOS 下陀螺仪效果不生效，查询 caniuse 原来是 iOS 网页下还不支持。
 > 使用 [@alipay/luna-deviceorientation](https://web.npm.alibaba-inc.com/package/@alipay/luna-deviceorientation) 包进行兼容，内部调用 iOS API。
 > 顺便包好像也已经把我之前考虑的几个问题给解决了……
-
-还有吗？好像真没了。
-
-放点字占位，占满一页好看点。
-
-………
 
 ---
 

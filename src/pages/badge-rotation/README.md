@@ -13,4 +13,10 @@
 
 ## 实现思路
 
+[slides](https://badge-rotation.explosion.yunyoujun.cn)
 
+## 编写 Slides
+
+```bash
+yarn dev
+```

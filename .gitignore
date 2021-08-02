@@ -12,6 +12,9 @@ node_modules
 dist
 dist-ssr
 *.local
+*.log
 
 # intellij stuff
 .idea/
+
+.remote-assets

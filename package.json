@@ -1,5 +1,5 @@
 {
-  "name": "explosion",
+  "name": "explosions",
   "description": "(∩ ◕_▩ )⊃━☆ Explosion！",
   "private": true,
   "author": {
@@ -8,12 +8,13 @@
     "url": "https://www.yunyoujun.cn"
   },
   "repository": {
-    "url": "https://github.com/YunYouJun/explosion",
+    "url": "https://github.com/YunYouJun/explosions",
     "type": "git"
   },
   "scripts": {
     "dev": "vite --port 3333 --open --host",
     "build": "cross-env NODE_ENV=production vite-ssg build",
+    "build:lib": "vite build --mode lib",
     "preview": "vite preview",
     "preview-https": "serve dist",
     "update:meta": "ts-node-script scripts/update.ts"
@@ -45,7 +46,7 @@
     "markdown-it-link-attributes": "^3.0.0",
     "markdown-it-prism": "^2.1.8",
     "pnpm": "^6.10.0",
-    "ts-node": "^10.1.0",
+    "ts-node": "^10.2.1",
     "typescript": "^4.3.5",
     "vite": "^2.4.2",
     "vite-plugin-components": "^0.12.2",

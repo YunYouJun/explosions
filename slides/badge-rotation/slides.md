@@ -8,7 +8,7 @@ info: |
   ## 徽章旋转动画
   蚂蚁森林 徽章旋转动画 技术分享
 
-  [YunYouJun/explosion](https://github.com/YunYouJun/explosion)
+  [YunYouJun/explosions](https://github.com/YunYouJun/explosions)
 title: 徽章旋转动画
 ---
 
@@ -29,7 +29,7 @@ title: 徽章旋转动画
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
   </button>
-  <a href="https://github.com/YunYouJun/explosion" target="_blank" alt="GitHub"
+  <a href="https://github.com/YunYouJun/explosions" target="_blank" alt="GitHub"
     class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
@@ -313,7 +313,7 @@ function step(timestamp) {
 
 > 正所谓，「日取其半，万世不竭」。——《庄子》
 
-因此我们需要两个徽章趋近于禁止时的一个界限（可以被忽略的参数大小）。
+因此我们需要明确徽章趋近于静止时的一个界限（可以被忽略的参数大小）。
 
 - `toleratedSpeed`: 0.001 可以被忽略的速度
 - `toleratedAngle`: 5 可以被忽略的角度
@@ -448,14 +448,14 @@ TypeScript + VueUse(PR) + CSS + createInertiaAnimation
 
 <div>
 
-<a class="text-xs absolute" href="https://explosion.yunyoujun.cn">示例: https://explosion.yunyoujun.cn</a>
+<a class="text-xs absolute" href="https://explosions.yunyoujun.cn">示例: https://explosions.yunyoujun.cn</a>
 
 <iframe
     title="Explosion"
     width="100%"
     height="100%"
     scrolling="no"
-    src="https://explosion.yunyoujun.cn/badge-rotation/">
+    src="https://explosions.yunyoujun.cn/badge-rotation/">
 </iframe>
 
 </div>

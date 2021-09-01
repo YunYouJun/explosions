@@ -13,7 +13,7 @@
 
 ## 实现思路
 
-[slides](https://badge-rotation.explosion.yunyoujun.cn)
+[slides](https://badge-rotation.explosions.yunyoujun.cn)
 
 > see `slides/badge-rotation/`
 

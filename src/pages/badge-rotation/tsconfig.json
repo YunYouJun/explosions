@@ -1,0 +1,7 @@
+{
+  "include": ["index.ts"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true
+  }
+}

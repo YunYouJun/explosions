@@ -14,11 +14,15 @@ export interface InertiaAnimationOptions {
   /**
    * 最后可忽略的速度
    */
-  toleratedSpeed?: 0.0005
+  toleratedSpeed?: number
   /**
    * 最后可忽略的角度
    */
-  toleratedAngel?: 3
+  toleratedAngel?: number
+  /**
+   * 每帧时间（以保持不同帧数设备衰减表现一致）
+   */
+  frameDuration: number
   /**
    * 获取旋转角度
    */
@@ -37,6 +41,13 @@ export interface InertiaAnimationOptions {
  */
 export function createInertiaAnimation(options: InertiaAnimationOptions) {
   return {
+    /**
+     * 是否正在播放
+     */
+    isPlaying: false,
+    /**
+     * 是否允许播放动画
+     */
     playAnimation: true,
     /**
      * 初速度
@@ -55,6 +66,10 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
      */
     toleratedSpeed: 0.0005,
     toleratedAngel: 3,
+    /**
+     * 每帧时间（以保持不同帧数设备衰减表现一致）
+     */
+    frameDuration: 16.67,
     /**
      * 获取旋转角度
      * @returns
@@ -81,6 +96,7 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
         u,
         toleratedSpeed,
         toleratedAngel,
+        frameDuration,
         getRotation,
         setRotation,
       } = this
@@ -97,9 +113,17 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
         else if (positiveRemainder > 0 && positiveRemainder < 90)
           speed += gravity
 
-        speed *= u
+        // 一般 60 帧，iPhone 省电模式变为 30 帧，会导致比此前衰减的慢。
 
-        if (lastTime === undefined) lastTime = timestamp
+        // 默认 16 ms
+        let elapsed = 16.67
+
+        if (lastTime)
+          elapsed = timestamp - lastTime
+        else lastTime = timestamp
+
+        // 帧数过低
+        speed *= Math.pow(u, elapsed / frameDuration)
 
         if (
           this.playAnimation
@@ -107,9 +131,7 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
             || (positiveRemainder > toleratedAngel
               && positiveRemainder < 180 - toleratedAngel))
         ) {
-          // 默认 16 ms
-          let elapsed = 16
-          if (lastTime !== undefined) elapsed = timestamp - lastTime
+          this.isPlaying = true
 
           lastTime = timestamp
 
@@ -118,9 +140,13 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
 
           window.requestAnimationFrame(step)
         }
+        else {
+          this.isPlaying = false
+        }
       }
 
       window.requestAnimationFrame(step)
+      this.isPlaying = false
     },
   }
 }

@@ -1,14 +1,25 @@
 {
-  "name": "badge-rotation",
+  "name": "@explosions/badge-rotation",
   "description": "旋转惯性动画",
-  "private": true,
-  "scripts": {
-    "dev": "slidev --open",
-    "build": "slidev build",
-    "export": "slidev export"
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
+    }
   },
-  "dependencies": {
-    "@slidev/cli": "^0.22.7",
-    "@slidev/theme-default": "*"
+  "scripts": {
+    "build": "yarn clean && rollup -c",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.2.5",
+    "rollup": "^2.56.3"
   }
 }

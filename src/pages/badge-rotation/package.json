@@ -1,6 +1,7 @@
 {
   "name": "@explosions/badge-rotation",
   "description": "旋转惯性动画",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -16,7 +17,8 @@
   },
   "scripts": {
     "build": "yarn clean && rollup -c",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.2.5",

@@ -18,3 +18,7 @@ dist-ssr
 .idea/
 
 .remote-assets
+
+# vitesse
+components.d.ts
+auto-imports.d.ts

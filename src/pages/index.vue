@@ -21,14 +21,16 @@ const explosionList = indexes
       <em class="text-lg opacity-75">{{ t('intro.desc') }}</em>
     </p>
 
-    <div class="my-5 grid grid-cols-3 gap-5">
+    <div flex="~ wrap" justify="center" m="t-4">
       <ExplosionCard
         v-for="(explosion, i) in explosionList"
         :key="i"
         :explosion="explosion"
         @click="router.push(explosion.name)"
       ></ExplosionCard>
+
     </div>
+
   </div>
 </template>
 

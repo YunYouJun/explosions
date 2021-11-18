@@ -3,12 +3,18 @@
     "name": "afx-logo"
   },
   {
-    "name": "badge-rotation"
+    "name": "badge-rotation",
+    "emoji": "🟣",
+    "description": "徽章旋转实现",
+    "color": "#6441a5"
   },
   {
     "name": "cube"
   },
   {
-    "name": "life-game"
+    "name": "life-game",
+    "emoji": "🎮",
+    "description": "康威生命游戏（CSS + DOM 版）",
+    "color": "black"
   }
 ]

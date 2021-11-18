@@ -21,8 +21,9 @@
     "update:meta": "ts-node-script scripts/update.ts"
   },
   "dependencies": {
+    "@ctrl/tinycolor": "^3.4.0",
     "@vueuse/core": "^6.9.1",
-    "@vueuse/head": "^0.7.0",
+    "@vueuse/head": "^0.7.2",
     "@vueuse/motion": "^2.0.0-beta.4",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.3",
@@ -38,6 +39,7 @@
     "@antfu/eslint-config": "^0.10.0",
     "@iconify-json/carbon": "^1.0.10",
     "@iconify-json/icon-park-outline": "^1.0.1",
+    "@iconify-json/mdi": "^1.0.9",
     "@iconify-json/ri": "^1.0.1",
     "@intlify/vite-plugin-vue-i18n": "^3.1.0",
     "@types/markdown-it-link-attributes": "^3.0.1",
@@ -51,6 +53,7 @@
     "critters": "^0.0.14",
     "cross-env": "^7.0.3",
     "eslint": "^8.2.0",
+    "gray-matter": "^4.0.3",
     "https-localhost": "^4.7.0",
     "markdown-it-link-attributes": "^3.0.0",
     "markdown-it-prism": "^2.2.1",

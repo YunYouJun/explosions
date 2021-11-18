@@ -19,6 +19,14 @@
       <div class="back"></div>
     </div>
   </div>
+  <div>
+    <a href="https://badge-rotation.explosions.yunyoujun.cn/" class="icon-btn" m="1" target="_blank" title="Slide">
+      <i-mdi-projector-screen-outline />
+    </a>
+    <a href="https://www.yunyoujun.cn/posts/how-to-realize-badge-rotation/" class="icon-btn" m="1" target="_blank" title="Slide">
+      <i-ri-file-line />
+    </a>
+  </div>
 </template>
 
 <script setup lang="ts">

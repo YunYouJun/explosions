@@ -26,7 +26,7 @@
       </span>
       <span>
         <label>间隔（ms）：</label>
-        <input v-model="interval" type="number" class="exp-input" />
+        <input v-model="interval" type="number" step="50" class="exp-input" />
       </span>
     </div>
     <div class="flex justify-between" m="t-6">
@@ -60,7 +60,7 @@ const rows = ref(25)
 // 列
 const cols = ref(25)
 // 500ms 时间间隔
-const interval = ref(500)
+const interval = ref(250)
 
 // to clear interval
 const intervalId = ref()

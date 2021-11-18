@@ -1,0 +1,123 @@
+<template>
+  <div
+    class="w-85 h-85 shadow"
+    border="~ gray-200"
+    grid="~"
+    gap="px"
+    m="auto"
+    bg="gray-200 opacity-50"
+    :style="containerStyle"
+  >
+    <template v-for="(rows, r) in lifeGrid" :key="r">
+      <template v-for="(item, c) in rows" :key="c">
+        <LifeSquare :init-status="item" :x="r" :y="c" @handle-square-click="setLifeGrid" />
+      </template>
+    </template>
+  </div>
+  <div class="w-85 operation text-center" m="auto" p="y-4">
+    <div class="flex justify-between text-xs">
+      <span>
+        <label>行：</label>
+        <input v-model="cols" type="number" class="exp-input" />
+      </span>
+      <span>
+        <label>列：</label>
+        <input v-model="rows" type="number" class="exp-input" />
+      </span>
+      <span>
+        <label>间隔（ms）：</label>
+        <input v-model="interval" type="number" class="exp-input" />
+      </span>
+    </div>
+    <div class="flex justify-between" m="t-6">
+      <button v-if="!intervalId" id="play" class="square-btn" @click="startLife">
+        <i-ri-play-line />
+      </button>
+      <button v-else id="pause" class="square-btn" @click="pauseLife">
+        <i-ri-pause-line />
+      </button>
+
+      <button id="random-init" class="square-btn" title="随机初始化" @click="generateRandomLife">
+        <i-ri-shuffle-line />
+      </button>
+      <button id="reset" class="square-btn" title="重置" @click="resetLife">
+        <i-ri-restart-line />
+      </button>
+    </div>
+
+    <div class="mt-5">
+      <hr />
+      <router-link class="icon-btn" m="t-5" to="/life-game/about">
+        <i-ri-file-line />
+      </router-link>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+// 行
+const rows = ref(25)
+// 列
+const cols = ref(25)
+// 500ms 时间间隔
+const interval = ref(500)
+
+// to clear interval
+const intervalId = ref()
+
+const lifeGrid = ref<boolean[][]>(new Array(rows.value).fill(new Array(cols.value).fill(false)))
+
+const containerStyle = computed(() => ({
+  gridTemplateColumns: `repeat(${cols.value}, minmax(0, 1fr))`,
+  gridTemplateRows: `repeat(${rows.value}, minmax(0, 1fr))`
+}))
+
+const isAlive = (x: number, y: number) => Boolean(lifeGrid.value[y] && lifeGrid.value[y][x])
+
+const surroundingGrid = [
+  [-1, -1],
+  [0, -1],
+  [1, -1],
+  [-1, 0],
+  [1, 0],
+  [-1, 1],
+  [0, 1],
+  [1, 1]
+]
+
+const nextLife = (x: number, y: number, isSelfAlive: boolean) => {
+  let count = 0
+  surroundingGrid.map((item) => {
+    count += Number(isAlive(x + item[0], y + item[1]))
+  })
+  return count === 3 || (isSelfAlive && count === 2)
+}
+
+/**
+ * 生成随机生命
+ */
+const generateRandomLife = () => {
+  lifeGrid.value = new Array(rows.value).fill(null).map(r => new Array(cols.value).fill(null).map(c => Math.random() > 0.5))
+}
+
+const startLife = () => {
+  intervalId.value = setInterval(() => {
+    lifeGrid.value = lifeGrid.value.map((rows, i) => (rows.map((item, j) => nextLife(j, i, item))))
+  }, interval.value)
+}
+
+const pauseLife = () => {
+  clearInterval(intervalId.value)
+  intervalId.value = null
+}
+
+const resetLife = () => {
+  lifeGrid.value = new Array(rows.value).fill(new Array(cols.value).fill(false))
+}
+
+const setLifeGrid = (x: number, y: number, value: boolean) => {
+  lifeGrid.value[x][y] = value
+}
+
+onBeforeMount(() => { generateRandomLife() })
+</script>

@@ -1,6 +1,9 @@
 <template>
   <div class="afx-container relative text-center p-10">
-    <div class="h-120 inline-flex justify-between items-center" :style="{width: `calc(${elementSize} * 4)`}">
+    <div
+      class="h-120 inline-flex justify-between items-center"
+      :style="{ width: `calc(${elementSize} * 4)` }"
+    >
       <div
         ref="triangleRef"
         class="afx-logo-triangle"
@@ -27,12 +30,15 @@
       ></div>
     </div>
   </div>
-  <h2 class="afx-title text-8xl font-thin">
-    A F X
-  </h2>
+  <h2 class="afx-title text-8xl font-thin">A F X</h2>
   <div class="mt-4 font-light">
-    <span>Size: </span>
-    <input v-model="elementSizeNumber" type="number" class="afx-input" @change="setElementSizeNumber" />
+    <span>Size:</span>
+    <input
+      v-model="elementSizeNumber"
+      type="number"
+      class="exp-input"
+      @change="setElementSizeNumber"
+    />
     <span class="ml-2">rem</span>
   </div>
 </template>
@@ -93,14 +99,6 @@ main {
 
 .afx-logo-triangle {
   clip-path: polygon(50% 7%, 0% 100%, 100% 100%);
-  background-image: linear-gradient(to top, #2563eb, #60a5fa)
-}
-
-.afx-input {
-  outline: none;
-
-  border: 1px solid black;
-  width: 3.5rem;
-  padding: 0.2rem 0.5rem;
+  background-image: linear-gradient(to top, #2563eb, #60a5fa);
 }
 </style>

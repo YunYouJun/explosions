@@ -17,6 +17,8 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 
+const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
+
 export default defineConfig(({ mode }) => {
   const commonConfig: UserConfig = {
     resolve: {
@@ -57,15 +59,13 @@ export default defineConfig(({ mode }) => {
             '@vueuse/head',
             '@vueuse/core',
           ],
-          dts: true,
+          dts: 'src/auto-imports.d.ts',
         }),
 
         // https://github.com/antfu/unplugin-vue-components
         Components({
           // allow auto load markdown components under `./src/components/`
           extensions: ['vue', 'md'],
-
-          dts: true,
 
           // allow auto import and register components used in markdown
           include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
@@ -79,19 +79,24 @@ export default defineConfig(({ mode }) => {
               // enabledCollections: ['carbon']
             }),
           ],
+
+          dts: 'src/components.d.ts',
         }),
 
         // https://github.com/antfu/unplugin-icons
-        Icons(),
+        Icons({
+          autoInstall: true,
+        }),
 
         // https://github.com/antfu/vite-plugin-windicss
         WindiCSS({
-          safelist: 'prose prose-sm m-auto text-left',
+          safelist: markdownWrapperClasses,
         }),
 
         // https://github.com/antfu/vite-plugin-md
+        // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
         Markdown({
-          wrapperClasses: 'prose prose-sm m-auto text-left',
+          wrapperClasses: markdownWrapperClasses,
           headEnabled: true,
           markdownItSetup(md) {
             // https://prismjs.com/
@@ -142,14 +147,27 @@ export default defineConfig(({ mode }) => {
           include: [path.resolve(__dirname, 'locales/**')],
         }),
       ],
+
+      server: {
+        fs: {
+          strict: true,
+        },
+      },
+
       // https://github.com/antfu/vite-ssg
       ssgOptions: {
         script: 'async',
         formatting: 'minify',
       },
 
+
       optimizeDeps: {
-        include: ['vue', 'vue-router', '@vueuse/core'],
+        include: [
+          'vue',
+          'vue-router',
+          '@vueuse/core',
+          '@vueuse/head',
+        ],
         exclude: ['vue-demi'],
       },
     }

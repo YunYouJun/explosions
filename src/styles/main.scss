@@ -28,12 +28,21 @@ html.dark {
   height: 2px;
 }
 
+button {
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .btn {
   border: none;
-  @apply px-4 py-1 rounded inline-block
+  @apply px-4 py-1 rounded inline-block 
     bg-teal-600 text-white cursor-pointer
     hover:bg-teal-700
-    disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50;
+    disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50
+    focus:outline-none;
 
   &.active {
     @apply bg-teal-900;
@@ -41,8 +50,19 @@ html.dark {
 }
 
 .icon-btn {
-  @apply inline-block cursor-pointer select-none
+  
+  @apply inline-flex justify-center items-center p-2 cursor-pointer select-none rounded-full
+    leading-0 border
     opacity-75 transition duration-200 ease-in-out
-    hover:opacity-100 hover:text-teal-600;
+    focus:outline-none
+    hover:(opacity-100 bg-black text-white bg-opacity-80);
   font-size: 0.9em;
+}
+
+.square-btn {
+  border-color: currentColor;
+
+  @apply inline-flex justify-center items-center p-2 leading-0 border
+    dark:(border-white hover:(text-black bg-white))
+    hover:(bg-black border-black text-white bg-opacity-80) ;
 }

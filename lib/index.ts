@@ -1,1 +1,1 @@
-export * from '~/pages/badge-rotation'
+export * from 'packages/badge-rotation'

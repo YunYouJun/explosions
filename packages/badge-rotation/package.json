@@ -3,7 +3,7 @@
   "description": "旋转惯性动画",
   "version": "0.0.1",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/index.es.js",
   "module": "dist/index.es.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -16,8 +16,9 @@
     }
   },
   "scripts": {
-    "build": "yarn clean && rollup -c",
+    "build": "rollup -c",
     "clean": "rm -rf dist",
+    "prebuild": "pnpm clean",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {

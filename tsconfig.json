@@ -19,7 +19,8 @@
       "vite-plugin-vue-layouts/client"
     ],
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@explosions/*": ["packages/*"]
     }
   },
   "exclude": ["dist", "node_modules"]

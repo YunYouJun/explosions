@@ -22,7 +22,7 @@ export interface InertiaAnimationOptions {
   /**
    * 每帧时间（以保持不同帧数设备衰减表现一致）
    */
-  frameDuration: number
+  frameDuration?: number
   /**
    * 获取旋转角度
    */

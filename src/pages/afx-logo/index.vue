@@ -34,7 +34,7 @@
   <div class="mt-4 font-light">
     <span>Size:</span>
     <input
-      v-model="elementSizeNumber"
+      v-model="afxLogoSize"
       type="number"
       class="exp-input"
       @change="setElementSizeNumber"
@@ -78,11 +78,12 @@ useMotion(circleRef, {
   enter: final,
 })
 
-const elementSizeNumber = ref(localStorage.getItem('afx-logo-size') || 6)
-const elementSize = computed(() => `${elementSizeNumber.value}rem`)
+const afxLogoSize = useStorage('afx-logo-size', 6)
+
+const elementSize = computed(() => `${afxLogoSize.value}rem`)
 
 const setElementSizeNumber = (e: any) => {
-  elementSizeNumber.value = e.target.value
+  afxLogoSize.value = e.target.value
   localStorage.setItem('afx-logo-size', e.target.value)
 }
 </script>

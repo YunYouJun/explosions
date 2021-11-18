@@ -10,7 +10,7 @@
   >
     <template v-for="(rows, r) in lifeGrid" :key="r">
       <template v-for="(item, c) in rows" :key="c">
-        <LifeSquare :init-status="item" :x="r" :y="c" @handle-square-click="setLifeGrid" />
+        <LifeSquare :init-status="item" :x="r" :y="c" @click="lifeGrid[r][c] = !lifeGrid[r][c]" />
       </template>
     </template>
   </div>
@@ -112,11 +112,7 @@ const pauseLife = () => {
 }
 
 const resetLife = () => {
-  lifeGrid.value = new Array(rows.value).fill(new Array(cols.value).fill(false))
-}
-
-const setLifeGrid = (x: number, y: number, value: boolean) => {
-  lifeGrid.value[x][y] = value
+  lifeGrid.value = new Array(rows.value).fill(false).map(_ => new Array(cols.value).fill(false))
 }
 
 onBeforeMount(() => { generateRandomLife() })

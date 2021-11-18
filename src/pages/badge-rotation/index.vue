@@ -25,7 +25,7 @@
 import { computed, onMounted, ref } from 'vue'
 // import { usePointerSwipe } from '@vueuse/core'
 import { usePointerSwipe, useSwipe } from '@vueuse/core'
-import { createInertiaAnimation } from '@explosions/badge-rotation'
+import { createInertiaAnimation } from '@explosions/badge-rotation/index'
 
 const rotateY = ref(0)
 const badgeStyle = computed(() => {

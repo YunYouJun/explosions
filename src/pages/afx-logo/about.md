@@ -1,5 +1,7 @@
 ---
-# description: 体验技术部 LOGO
+emoji: 🐜
+description: 蚂蚁体验技术部 LOGO 动画
+color: "#00a8ff"
 ---
 
 # FAQ

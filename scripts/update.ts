@@ -1,7 +1,7 @@
 import fs from 'fs'
+import matter from 'gray-matter'
 import { logger } from './logger'
 import { formatJSON } from './utils'
-import matter from 'gray-matter'
 
 export const pagesFolder = 'src/pages'
 const folders = fs.readdirSync(pagesFolder).filter(item => fs.statSync(`${pagesFolder}/${item}`).isDirectory())
@@ -13,7 +13,7 @@ const indexes = folders.map((folder) => {
   const aboutMdPath = `${pagesFolder}/${folder}/about.md`
   try {
     const md = fs.readFileSync(aboutMdPath, 'utf-8')
-    const { data: frontmatter} = matter(md)
+    const { data: frontmatter } = matter(md)
     info = Object.assign(info, frontmatter)
   }
   catch {

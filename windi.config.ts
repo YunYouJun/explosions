@@ -2,12 +2,15 @@ import { defineConfig } from 'vite-plugin-windicss'
 import colors from 'windicss/colors'
 import typography from 'windicss/plugin/typography'
 
+const importantColors = ['red', 'green', 'blue', 'yellow']
+
 export default defineConfig({
   darkMode: 'class',
   plugins: [
     typography(),
   ],
   attributify: true,
+  safelist: importantColors.map((color) => `bg-${color}-500`),
   theme: {
     extend: {
       typography: {

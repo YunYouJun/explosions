@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vue-router'
 import indexes from '~/../meta/indexes.json'
 const { t } = useI18n()
-
-const router = useRouter()
 
 const explosionList = indexes
 </script>
@@ -26,11 +23,8 @@ const explosionList = indexes
         v-for="(explosion, i) in explosionList"
         :key="i"
         :explosion="explosion"
-        @click="router.push(explosion.name)"
-      ></ExplosionCard>
-
+      />
     </div>
-
   </div>
 </template>
 

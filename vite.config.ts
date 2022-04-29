@@ -17,7 +17,7 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 
-const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
+const markdownWrapperClasses = 'markdown-body m-auto text-left'
 
 export default defineConfig(({ mode }) => {
   const commonConfig: UserConfig = {
@@ -27,6 +27,11 @@ export default defineConfig(({ mode }) => {
         '@explosions/': `${path.resolve(__dirname, 'packages')}/`,
       },
     },
+    // build: {
+    //   rollupOptions: {
+    //     external: ['p5'],
+    //   },
+    // },
   }
 
   if (mode === 'lib') {
@@ -161,13 +166,13 @@ export default defineConfig(({ mode }) => {
         formatting: 'minify',
       },
 
-
       optimizeDeps: {
         include: [
           'vue',
           'vue-router',
           '@vueuse/core',
           '@vueuse/head',
+          'p5',
         ],
         exclude: ['vue-demi'],
       },

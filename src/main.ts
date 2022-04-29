@@ -7,6 +7,7 @@ import App from './App.vue'
 import 'virtual:windi-base.css'
 import 'virtual:windi-components.css'
 
+import 'star-markdown-css/src/scss/theme/yun.scss'
 import './styles/main.scss'
 import './styles/common.scss'
 

@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import p5 from 'p5'
+import { isClient } from '@vueuse/core'
+
+import type p5 from 'p5'
 
 interface Bubble { x: number; y: number; size: number; speed: number }
 
@@ -65,7 +67,11 @@ const sketch = (s: p5) => {
   }
 }
 
-onMounted(() => {
+onMounted(async () => {
+  if (!isClient)
+    return
+
+  const { default: p5 } = await import('p5')
   // @ts-expect-error new p5
   // eslint-disable-next-line new-cap
   const sketchInstance = new p5(sketch)

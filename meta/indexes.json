@@ -22,6 +22,9 @@
     "name": "cube"
   },
   {
+    "name": "float-guide"
+  },
+  {
     "name": "life-game",
     "emoji": "🎮",
     "description": "康威生命游戏（CSS + DOM 版）",

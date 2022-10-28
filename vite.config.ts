@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import type { UserConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
+import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 
 import Icons from 'unplugin-icons/vite'
@@ -10,7 +11,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
-import Markdown from 'vite-plugin-md'
+import Markdown from 'vite-plugin-vue-markdown'
 import WindiCSS from 'vite-plugin-windicss'
 import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
@@ -99,7 +100,7 @@ export default defineConfig(({ mode }) => {
           safelist: markdownWrapperClasses,
         }),
 
-        // https://github.com/antfu/vite-plugin-md
+        // https://github.com/antfu/vite-plugin-vue-markdown
         // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
         Markdown({
           wrapperClasses: markdownWrapperClasses,
@@ -164,17 +165,12 @@ export default defineConfig(({ mode }) => {
       ssgOptions: {
         script: 'async',
         formatting: 'minify',
+        onFinished() { generateSitemap() },
       },
 
-      optimizeDeps: {
-        include: [
-          'vue',
-          'vue-router',
-          '@vueuse/core',
-          '@vueuse/head',
-          'p5',
-        ],
-        exclude: ['vue-demi'],
+      ssr: {
+        // TODO: workaround until they support native ESM
+        noExternal: ['workbox-window', /vue-i18n/],
       },
     }
   }

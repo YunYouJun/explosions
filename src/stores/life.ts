@@ -1,7 +1,6 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
 export const useLifeStore = defineStore('life', () => {
-
   return {
   }
 })

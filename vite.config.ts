@@ -12,7 +12,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
 import Markdown from 'vite-plugin-vue-markdown'
-import WindiCSS from 'vite-plugin-windicss'
+import UnoCSS from 'unocss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import Prism from 'markdown-it-prism'
@@ -96,10 +96,7 @@ export default defineConfig(({ mode }) => {
           autoInstall: true,
         }),
 
-        // https://github.com/antfu/vite-plugin-windicss
-        WindiCSS({
-          safelist: markdownWrapperClasses,
-        }),
+        UnoCSS(),
 
         // https://github.com/antfu/vite-plugin-vue-markdown
         // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite

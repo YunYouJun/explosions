@@ -109,7 +109,8 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
         const remainder = getRotation() % 180
         const positiveRemainder = remainder < 0 ? remainder + 180 : remainder
 
-        if (positiveRemainder >= 90 && positiveRemainder < 180) speed -= gravity
+        if (positiveRemainder >= 90 && positiveRemainder < 180)
+          speed -= gravity
         else if (positiveRemainder > 0 && positiveRemainder < 90)
           speed += gravity
 
@@ -123,7 +124,7 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
         else lastTime = timestamp
 
         // 帧数过低
-        speed *= Math.pow(u, elapsed / frameDuration)
+        speed *= u ** (elapsed / frameDuration)
 
         if (
           this.playAnimation

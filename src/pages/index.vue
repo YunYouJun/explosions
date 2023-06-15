@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import indexes from '~/../meta/indexes.json'
+
 const { t } = useI18n()
 
 const explosionList = indexes

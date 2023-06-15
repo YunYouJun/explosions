@@ -1,48 +1,3 @@
-<template>
-  <div class="afx-container relative text-center p-10">
-    <div
-      class="h-120 inline-flex justify-between items-center"
-      :style="{ width: `calc(${elementSize} * 4)` }"
-    >
-      <div
-        ref="triangleRef"
-        class="afx-logo-triangle"
-        :style="{
-          width: `calc(0.4rem + ${elementSize})`,
-          height: `calc(0.4rem + ${elementSize})`
-        }"
-      ></div>
-      <div
-        ref="squareRef"
-        class="afx-logo-square bg-gradient-to-t from-amber-500 to-amber-200"
-        :style="{
-          width: elementSize,
-          height: elementSize
-        }"
-      ></div>
-      <div
-        ref="circleRef"
-        class="afx-logo-circle rounded-1/2 bg-gradient-to-t from-rose-600 to-rose-400"
-        :style="{
-          width: elementSize,
-          height: elementSize
-        }"
-      ></div>
-    </div>
-  </div>
-  <h2 class="afx-title text-8xl font-thin">A F X</h2>
-  <div class="mt-4 font-light">
-    <span>Size:</span>
-    <input
-      v-model="afxLogoSize"
-      type="number"
-      class="exp-input"
-      @change="setElementSizeNumber"
-    />
-    <span class="ml-2">rem</span>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useMotion } from '@vueuse/motion'
 
@@ -82,11 +37,58 @@ const afxLogoSize = useStorage('afx-logo-size', 6)
 
 const elementSize = computed(() => `${afxLogoSize.value}rem`)
 
-const setElementSizeNumber = (e: any) => {
+function setElementSizeNumber(e: any) {
   afxLogoSize.value = e.target.value
   localStorage.setItem('afx-logo-size', e.target.value)
 }
 </script>
+
+<template>
+  <div class="afx-container relative text-center p-10">
+    <div
+      class="h-120 inline-flex justify-between items-center"
+      :style="{ width: `calc(${elementSize} * 4)` }"
+    >
+      <div
+        ref="triangleRef"
+        class="afx-logo-triangle"
+        :style="{
+          width: `calc(0.4rem + ${elementSize})`,
+          height: `calc(0.4rem + ${elementSize})`,
+        }"
+      />
+      <div
+        ref="squareRef"
+        class="afx-logo-square bg-gradient-to-t from-amber-500 to-amber-200"
+        :style="{
+          width: elementSize,
+          height: elementSize,
+        }"
+      />
+      <div
+        ref="circleRef"
+        class="afx-logo-circle rounded-1/2 bg-gradient-to-t from-rose-600 to-rose-400"
+        :style="{
+          width: elementSize,
+          height: elementSize,
+        }"
+      />
+    </div>
+  </div>
+  <h2 class="afx-title text-8xl font-thin">
+    A F X
+  </h2>
+  <div class="mt-4 font-light">
+    <span>Size:</span>
+    <input
+      v-model="afxLogoSize"
+      type="number"
+      class="exp-input"
+      @change="setElementSizeNumber"
+    >
+    <span class="ml-2">rem</span>
+  </div>
+</template>
 
 <style lang="scss">
 main {

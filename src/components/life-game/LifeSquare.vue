@@ -1,10 +1,3 @@
-<template>
-  <div
-    class="inline-grid cursor-pointer bg-opacity-80"
-    :bg="props.initStatus ? 'black' : 'white'"
-  ></div>
-</template>
-
 <script setup lang="ts">
 const props = defineProps<{
   /**
@@ -15,3 +8,10 @@ const props = defineProps<{
   y: number
 }>()
 </script>
+
+<template>
+  <div
+    class="inline-grid cursor-pointer bg-opacity-80"
+    :bg="props.initStatus ? 'black' : 'white'"
+  />
+</template>

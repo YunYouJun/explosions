@@ -5,7 +5,7 @@ import type p5 from 'p5'
 
 interface Bubble { x: number; y: number; size: number; speed: number }
 
-const sketch = (s: p5) => {
+function sketch(s: p5) {
   const bubbles: Bubble[] = []// holds bubble objects
   const bubbleNum = 20// # of bubbles?
   const xVariation = 2// how much the bubbles move in the x direction
@@ -73,7 +73,7 @@ onMounted(async () => {
 
   const { default: p5 } = await import('p5')
   // @ts-expect-error new p5
-  // eslint-disable-next-line new-cap
+  // eslint-disable-next-line new-cap, unused-imports/no-unused-vars
   const sketchInstance = new p5(sketch)
 })
 </script>

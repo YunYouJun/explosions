@@ -1,36 +1,6 @@
-<template>
-  <div>
-    <button
-      :class="['btn', 'm-2', swipeType === 'PointSwipe' ? 'active' : '']"
-      @click="swipeType = 'PointSwipe'"
-    >
-      PointerSwipe
-    </button>
-    <button
-      :class="['btn', 'm-2', swipeType === 'Swipe' ? 'active' : '']"
-      @click="swipeType = 'Swipe'"
-    >
-      Swipe(Touch)
-    </button>
-  </div>
-  <div ref="container" class="badge-container">
-    <div class="badge" :style="badgeStyle">
-      <div class="front"></div>
-      <div class="back"></div>
-    </div>
-  </div>
-  <div>
-    <a href="https://badge-rotation.explosions.yunyoujun.cn/" class="icon-btn" m="1" target="_blank" title="Slide">
-      <i-mdi-projector-screen-outline />
-    </a>
-    <a href="https://www.yunyoujun.cn/posts/how-to-realize-badge-rotation/" class="icon-btn" m="1" target="_blank" title="Slide">
-      <i-ri-file-line />
-    </a>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
+
 // import { usePointerSwipe } from '@vueuse/core'
 import { usePointerSwipe, useSwipe } from '@vueuse/core'
 import { createInertiaAnimation } from '@explosions/badge-rotation/index'
@@ -88,31 +58,37 @@ function onTouchEnd(distanceX: number, type = 'Swipe') {
 
 const { distanceX } = usePointerSwipe(container, {
   threshold: 10,
-  onSwipeStart(e) {
-    if (swipeType.value !== 'PointSwipe') return
+  onSwipeStart(_e) {
+    if (swipeType.value !== 'PointSwipe')
+      return
     onTouchStart(distanceX.value, 'PointerSwipe')
   },
-  onSwipe(e) {
-    if (swipeType.value !== 'PointSwipe') return
+  onSwipe(_e) {
+    if (swipeType.value !== 'PointSwipe')
+      return
     onTouchMove(distanceX.value, 'PointerSwipe')
   },
-  onSwipeEnd(e) {
-    if (swipeType.value !== 'PointSwipe') return
+  onSwipeEnd(_e) {
+    if (swipeType.value !== 'PointSwipe')
+      return
     onTouchEnd(distanceX.value, 'PointerSwipe')
   },
 })
 
 const { lengthX } = useSwipe(container, {
-  onSwipeStart(e) {
-    if (swipeType.value !== 'Swipe') return
+  onSwipeStart(_e) {
+    if (swipeType.value !== 'Swipe')
+      return
     onTouchStart(lengthX.value)
   },
-  onSwipe(e) {
-    if (swipeType.value !== 'Swipe') return
+  onSwipe(_e) {
+    if (swipeType.value !== 'Swipe')
+      return
     onTouchMove(lengthX.value)
   },
-  onSwipeEnd(e) {
-    if (swipeType.value !== 'Swipe') return
+  onSwipeEnd(_e) {
+    if (swipeType.value !== 'Swipe')
+      return
     onTouchEnd(lengthX.value)
   },
 })
@@ -133,6 +109,37 @@ onMounted(() => {
   })
 })
 </script>
+
+<template>
+  <div>
+    <button
+      class="btn m-2" :class="[swipeType === 'PointSwipe' ? 'active' : '']"
+      @click="swipeType = 'PointSwipe'"
+    >
+      PointerSwipe
+    </button>
+    <button
+      class="btn m-2" :class="[swipeType === 'Swipe' ? 'active' : '']"
+      @click="swipeType = 'Swipe'"
+    >
+      Swipe(Touch)
+    </button>
+  </div>
+  <div ref="container" class="badge-container">
+    <div class="badge" :style="badgeStyle">
+      <div class="front" />
+      <div class="back" />
+    </div>
+  </div>
+  <div>
+    <a href="https://badge-rotation.explosions.yunyoujun.cn/" class="icon-btn" m="1" target="_blank" title="Slide">
+      <i-mdi-projector-screen-outline />
+    </a>
+    <a href="https://www.yunyoujun.cn/posts/how-to-realize-badge-rotation/" class="icon-btn" m="1" target="_blank" title="Slide">
+      <i-ri-file-line />
+    </a>
+  </div>
+</template>
 
 <style lang="scss">
 @import './index.scss';

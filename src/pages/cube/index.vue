@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const cubeStyle = computed(() => {
+  return {
+    transform: 'rotate3d(2, -1, -1, -0.2turn)',
+  }
+})
+</script>
+
 <template>
   <main class="container">
     <div id="example-element" class="transition-all" :style="cubeStyle">
@@ -22,16 +32,6 @@
     </div>
   </main>
 </template>
-
-<script setup lang="ts">
-import { computed } from 'vue'
-
-const cubeStyle = computed(() => {
-  return {
-    transform: 'rotate3d(2, -1, -1, -0.2turn)',
-  }
-})
-</script>
 
 <style lang="scss">
 .container {

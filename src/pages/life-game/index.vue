@@ -29,9 +29,9 @@ const surroundingGrid = [
   [1, 1],
 ]
 
-const nextLife = (x: number, y: number, isSelfAlive: boolean) => {
+function nextLife(x: number, y: number, isSelfAlive: boolean) {
   let count = 0
-  surroundingGrid.map((item) => {
+  surroundingGrid.forEach((item) => {
     count += Number(isAlive(x + item[0], y + item[1]))
   })
   return count === 3 || (isSelfAlive && count === 2)
@@ -40,26 +40,30 @@ const nextLife = (x: number, y: number, isSelfAlive: boolean) => {
 /**
  * 生成随机生命
  */
-const generateRandomLife = () => {
-  lifeGrid.value = new Array(rows.value).fill(null).map(r => new Array(cols.value).fill(null).map(c => Math.random() > 0.5))
+function generateRandomLife() {
+  lifeGrid.value = new Array(rows.value).fill(null).map(_r =>
+    new Array(cols.value).fill(null).map(_c => Math.random() > 0.5),
+  )
 }
 
-const startLife = () => {
+function startLife() {
   intervalId.value = setInterval(() => {
     lifeGrid.value = lifeGrid.value.map((rows, i) => (rows.map((item, j) => nextLife(j, i, item))))
   }, interval.value)
 }
 
-const pauseLife = () => {
+function pauseLife() {
   clearInterval(intervalId.value)
   intervalId.value = null
 }
 
-const resetLife = () => {
+function resetLife() {
   lifeGrid.value = new Array(rows.value).fill(false).map(_ => new Array(cols.value).fill(false))
 }
 
-onBeforeMount(() => { generateRandomLife() })
+onBeforeMount(() => {
+  generateRandomLife()
+})
 </script>
 
 <template>
@@ -72,8 +76,8 @@ onBeforeMount(() => { generateRandomLife() })
     bg="gray-200 opacity-50"
     :style="containerStyle"
   >
-    <template v-for="(rows, r) in lifeGrid" :key="r">
-      <template v-for="(item, c) in rows" :key="c">
+    <template v-for="(row, r) in lifeGrid" :key="r">
+      <template v-for="(item, c) in row" :key="c">
         <LifeSquare :init-status="item" :x="r" :y="c" @click="lifeGrid[r][c] = !lifeGrid[r][c]" />
       </template>
     </template>

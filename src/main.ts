@@ -2,19 +2,15 @@ import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
 import App from './App.vue'
+import type { UserModule } from './types'
 
-// windicss layers
-import 'virtual:windi-base.css'
-import 'virtual:windi-components.css'
+import '@unocss/reset/tailwind.css'
 
 import 'star-markdown-css/src/scss/theme/yun.scss'
 import './styles/main.scss'
 import './styles/common.scss'
 
-// windicss utilities should be the last style import
-import 'virtual:windi-utilities.css'
-// windicss devtools support (dev only)
-import 'virtual:windi-devtools'
+import 'uno.css'
 
 const routes = setupLayouts(generatedRoutes)
 
@@ -24,6 +20,7 @@ export const createApp = ViteSSG(
   { routes },
   (ctx) => {
     // install all modules under `modules/`
-    Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
+    Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
+      .forEach(i => i.install?.(ctx))
   },
 )

@@ -28,7 +28,6 @@ const cardStyle = computed(() => {
     }
   }
 })
-
 </script>
 
 <template>
@@ -56,11 +55,11 @@ const cardStyle = computed(() => {
     </h2>
     <small class="block" p="2" v-html="explosion.description || '说点什么好呢'" />
 
-    <router-link class="icon-btn" m="x-1" :to="'/' + explosion.name">
+    <router-link class="icon-btn" m="x-1" :to="`/${explosion.name}`">
       <i-ri-eye-line />
     </router-link>
 
-    <router-link class="icon-btn" m="x-1" :to="'/' + explosion.name + '/about'">
+    <router-link class="icon-btn" m="x-1" :to="`/${explosion.name}/about`">
       <i-ri-information-line />
     </router-link>
     <slot />

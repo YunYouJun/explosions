@@ -14,7 +14,7 @@ function toggleLocales() {
 <template>
   <nav class="text-xl my-4">
     <router-link class="icon-btn mx-2" to="/" :title="t('button.home')">
-      <i-carbon-campsite />
+      <div i-carbon-campsite />
     </router-link>
 
     <button
@@ -26,8 +26,8 @@ function toggleLocales() {
         }
       "
     >
-      <i-carbon-moon v-if="isDark" />
-      <i-carbon-sun v-else />
+      <div i-carbon-moon v-if="isDark" />
+      <div i-carbon-sun v-else />
     </button>
 
     <a
@@ -35,11 +35,11 @@ function toggleLocales() {
       :title="t('button.toggle_langs')"
       @click="toggleLocales"
     >
-      <i-carbon-language />
+      <div i-carbon-language />
     </a>
 
     <router-link class="icon-btn mx-2" to="/about" :title="t('button.about')">
-      <i-carbon-dicom-overlay />
+      <div i-carbon-dicom-overlay />
     </router-link>
 
     <a
@@ -49,7 +49,7 @@ function toggleLocales() {
       target="_blank"
       title="GitHub"
     >
-      <i-carbon-logo-github />
+      <div i-carbon-logo-github />
     </a>
   </nav>
 </template>

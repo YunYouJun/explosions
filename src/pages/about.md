@@ -3,7 +3,7 @@ title: About | 关于
 ---
 
 <div class="text-center">
-  <i-icon-park-outline-sorcerer-hat class="text-8xl mx-auto" style="color: #C24448" />
+  <div i-icon-park-outline-sorcerer-hat class="text-8xl mx-auto" style="color: #C24448" />
 </div>
 
 [惠惠](https://mzh.moegirl.org.cn/zh-hans/%E6%83%A0%E6%83%A0)是一个只能使用爆裂魔法，只想使用爆裂魔法的魔法师。喜欢的东西是爆裂魔法，特技是爆裂魔法，兴趣是爆裂魔法，唯一的真爱也是爆裂魔法。

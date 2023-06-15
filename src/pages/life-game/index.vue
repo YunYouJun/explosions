@@ -99,24 +99,24 @@ onBeforeMount(() => {
     </div>
     <div class="flex justify-between" m="t-6">
       <button v-if="!intervalId" id="play" class="square-btn" @click="startLife">
-        <i-ri-play-line />
+        <div i-ri-play-line />
       </button>
       <button v-else id="pause" class="square-btn" @click="pauseLife">
-        <i-ri-pause-line />
+        <div i-ri-pause-line />
       </button>
 
       <button id="random-init" class="square-btn" title="随机初始化" @click="generateRandomLife">
-        <i-ri-shuffle-line />
+        <div i-ri-shuffle-line />
       </button>
       <button id="reset" class="square-btn" title="重置" @click="resetLife">
-        <i-ri-restart-line />
+        <div i-ri-restart-line />
       </button>
     </div>
 
     <div class="mt-5">
       <hr>
       <router-link class="icon-btn" m="t-5" to="/life-game/about">
-        <i-ri-file-line />
+        <div i-ri-file-line />
       </router-link>
     </div>
   </div>

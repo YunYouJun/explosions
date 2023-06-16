@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import indexes from '~/../meta/indexes.json'
+import { indexes } from '@explosions/metadata'
 
 const { t } = useI18n()
 

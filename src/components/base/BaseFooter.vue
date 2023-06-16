@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import VueAboutMe from 'vue-about-me'
 import 'vue-about-me/style.css'
 
+import VueAboutMe from 'vue-about-me'
 import pkg from '~/../package.json'
-import { isDark } from '~/composables'
 
 const copyright = {
   name: 'Explosions',

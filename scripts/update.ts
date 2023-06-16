@@ -24,7 +24,7 @@ const indexes = folders.map((folder) => {
 })
 
 export function run() {
-  fs.writeFileSync('meta/indexes.json', formatJSON(indexes))
+  fs.writeFileSync('packages/metadata/indexes.json', formatJSON(indexes))
   logger.info(`Updated ${pagesFolder}/indexes.json.`)
 }
 

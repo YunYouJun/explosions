@@ -21,3 +21,6 @@ dist-ssr
 # vitesse
 components.d.ts
 auto-imports.d.ts
+
+# metadata
+packages/metadata/indexes.json

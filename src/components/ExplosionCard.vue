@@ -18,7 +18,7 @@ const cardStyle = computed(() => {
     const color = new TinyColor(explosion.value.color)
     const textColor = explosion.value.textColor || (color.isDark() ? 'white' : 'black')
     return {
-      '--tw-gradient-stops': `${color.spin(55).toHexString()}, ${explosion.value.color}`,
+      '--un-gradient-stops': `${color.spin(55).toHexString()}, ${explosion.value.color}`,
       'color': textColor,
     }
   }
@@ -31,7 +31,7 @@ const cardStyle = computed(() => {
 </script>
 
 <template>
-  <div
+  <router-link
     class="
       explosion-card
       shadow
@@ -46,6 +46,7 @@ const cardStyle = computed(() => {
     bg="opacity-80 gradient-to-br"
     m="2"
     :style="cardStyle"
+    :to="`/${explosion.name}`"
   >
     <div v-if="explosion.emoji">
       {{ explosion.emoji }}
@@ -63,5 +64,5 @@ const cardStyle = computed(() => {
       <div i-ri-information-line />
     </router-link>
     <slot />
-  </div>
+  </router-link>
 </template>

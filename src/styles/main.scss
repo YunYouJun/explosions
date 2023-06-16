@@ -1,4 +1,5 @@
-@import './markdown.scss';
+@use '@yunlefun/ui/styles/css-vars.scss';
+@use './markdown.scss';
 
 html,
 body,
@@ -6,10 +7,9 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-}
 
-html.dark {
-  background: #121212;
+  background-color: var(--ylf-c-bg);
+  transition: background-color 2s ease-in-out;
 }
 
 #nprogress {
@@ -17,7 +17,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  @apply bg-teal-600 opacity-75;
+  @apply bg-orange-600 opacity-75;
 
   position: fixed;
   z-index: 1031;

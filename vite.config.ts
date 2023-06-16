@@ -7,7 +7,6 @@ import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 
 import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
@@ -17,6 +16,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
+
+import { componentsDir } from '@yunlefun/vue-components'
 
 const markdownWrapperClasses = 'markdown-body m-auto text-left'
 
@@ -68,26 +69,20 @@ export default defineConfig(({ mode }) => {
             '@vueuse/core',
           ],
           dts: 'src/auto-imports.d.ts',
+          dirs: [
+            'src/composables',
+            'src/stores',
+          ],
+          vueTemplate: true,
         }),
 
         // https://github.com/antfu/unplugin-vue-components
         Components({
           // allow auto load markdown components under `./src/components/`
+          dirs: ['src/components', componentsDir],
           extensions: ['vue', 'md'],
-
           // allow auto import and register components used in markdown
           include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-
-          // custom resolvers
-          resolvers: [
-            // auto import icons
-            // https://github.com/antfu/unplugin-icons
-            IconsResolver({
-              // componentPrefix: '',
-              // enabledCollections: ['carbon']
-            }),
-          ],
-
           dts: 'src/components.d.ts',
         }),
 
@@ -149,21 +144,21 @@ export default defineConfig(({ mode }) => {
         VueI18n({
           runtimeOnly: true,
           compositionOnly: true,
+          fullInstall: true,
           include: [path.resolve(__dirname, 'locales/**')],
         }),
       ],
-
-      server: {
-        fs: {
-          strict: true,
-        },
-      },
 
       // https://github.com/antfu/vite-ssg
       ssgOptions: {
         script: 'async',
         formatting: 'minify',
-        onFinished() { generateSitemap() },
+        crittersOptions: {
+          reduceInlineStyles: false,
+        },
+        onFinished() {
+          generateSitemap()
+        },
       },
 
       ssr: {

@@ -119,7 +119,7 @@ importers:
         version: 1.6.0
       pnpm:
         specifier: ^8.6.3
-        version: 8.6.3
+        version: 8.6.8
       star-markdown-css:
         specifier: ^0.4.2
         version: 0.4.2
@@ -5971,8 +5971,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.6.3:
-    resolution: {integrity: sha512-0Y4neugHIJEEa8y8oJMfd9wwgHkc1hIq6JC/UEEl2K92s3+zPaKH26n7u22m67E+MU6fpKRkx+/+PYWZzr5yQw==}
+  /pnpm@8.6.8:
+    resolution: {integrity: sha512-OtrCRUE7VqRyKly9E3gfExZHOAHtFDpmulyVFKrnl3v/n2xJckdueVumWJqUA5FHxcRP/T42r8P8CDr9duPP9w==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true

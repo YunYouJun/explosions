@@ -94,8 +94,8 @@ importers:
         specifier: ^0.3.5
         version: 0.3.5
       critters:
-        specifier: ^0.0.19
-        version: 0.0.19
+        specifier: ^0.0.20
+        version: 0.0.20
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -158,7 +158,7 @@ importers:
         version: 0.23.5(rollup@2.79.1)(vite@4.3.9)
       vite-ssg:
         specifier: ^0.22.2
-        version: 0.22.2(@vueuse/head@1.1.26)(critters@0.0.19)(vite@4.3.9)(vue-router@4.2.2)(vue@3.3.4)
+        version: 0.22.2(@vueuse/head@1.1.26)(critters@0.0.20)(vite@4.3.9)(vue-router@4.2.2)(vue@3.3.4)
       vite-ssg-sitemap:
         specifier: ^0.5.1
         version: 0.5.1
@@ -3387,8 +3387,8 @@ packages:
       vary: 1.1.2
     dev: true
 
-  /critters@0.0.19:
-    resolution: {integrity: sha512-Fm4ZAXsG0VzWy1U30rP4qxbaWGSsqXDgSupJW1OUJGDAs0KWC+j37v7p5a2kZ9BPJvhRzWm3be+Hc9WvQOBUOw==}
+  /critters@0.0.20:
+    resolution: {integrity: sha512-CImNRorKOl5d8TWcnAz5n5izQ6HFsvz29k327/ELy6UFcmbiZNOsinaKvzv16WZR0P6etfSWYzE47C4/56B3Uw==}
     dependencies:
       chalk: 4.1.2
       css-select: 5.1.0
@@ -7305,7 +7305,7 @@ packages:
     resolution: {integrity: sha512-X3ZImSVpFMypBTIhaTqEOdKj7tO9n7Puzd8vsxuQluFUyu6x/e2Dzv8qk5qZsC34ZR6iHt0wa2sPhDu1OjdOsA==}
     dev: true
 
-  /vite-ssg@0.22.2(@vueuse/head@1.1.26)(critters@0.0.19)(vite@4.3.9)(vue-router@4.2.2)(vue@3.3.4):
+  /vite-ssg@0.22.2(@vueuse/head@1.1.26)(critters@0.0.20)(vite@4.3.9)(vue-router@4.2.2)(vue@3.3.4):
     resolution: {integrity: sha512-eSlp/WiT7dkpZ6TIkZuALUcOnCJlVfqj38OdpFVZHtHFcwCH9b95edu5Hgti5WnGrq33iVfGOK67zWpt9ClroA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -7323,7 +7323,7 @@ packages:
     dependencies:
       '@unhead/dom': 1.1.27
       '@vueuse/head': 1.1.26(vue@3.3.4)
-      critters: 0.0.19
+      critters: 0.0.20
       fs-extra: 11.1.1
       html-minifier: 4.0.0
       html5parser: 2.0.2

@@ -2,3 +2,4 @@ packages:
   - packages/**
   - slides
   - scripts
+  - playground

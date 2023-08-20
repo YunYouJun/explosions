@@ -104,8 +104,8 @@ video {
 <br>
 
 ```ts
-const deltaX = curPos.x - this.lastPos.x;
-model.eulerAngles.y += deltaX;
+const deltaX = curPos.x - this.lastPos.x
+model.eulerAngles.y += deltaX
 ```
 
 <br>
@@ -166,23 +166,23 @@ requestAnimationFrame[^1] 更优雅
 
 ```ts
 // 滑动距离
-const deltaX = 
-  e.changedTouches[0].clientX - this.prePos.x;
+const deltaX
+  = e.changedTouches[0].clientX - this.prePos.x
 
-const touchEndTime = new Date().valueOf();
+const touchEndTime = new Date().valueOf()
 // 滑动时间
-const deltaTime = touchEndTime - touchStartTime;
+const deltaTime = touchEndTime - touchStartTime
 
 /**
  * 初始速度，每 ms 旋转速度（设顺时针为正数）
  * deltaX <= 0 为顺时针
  */
-let speed = -deltaX / deltaTime;
+const speed = -deltaX / deltaTime
 
 // 将速度赋予动画实例，播放动画
-this.inertiaAnimation.playAnimation = true;
-this.inertiaAnimation.speed = speed;
-this.inertiaAnimation.run();
+this.inertiaAnimation.playAnimation = true
+this.inertiaAnimation.speed = speed
+this.inertiaAnimation.run()
 ```
 
 </div>
@@ -236,14 +236,13 @@ gravity: 0.008
 
 ```ts
 // 一些乱七八糟的取余处理（因为会大于 180 嘛）
-const remainder = getRotation() % 180;
-const positiveRemainder = remainder < 0 ? remainder + 180 : remainder;
+const remainder = getRotation() % 180
+const positiveRemainder = remainder < 0 ? remainder + 180 : remainder
 
-if (positiveRemainder >= 90 && positiveRemainder < 180) {
-  speed -= gravity;
-} else if (positiveRemainder > 0 && positiveRemainder < 90) {
-  speed += gravity;
-}
+if (positiveRemainder >= 90 && positiveRemainder < 180)
+  speed -= gravity
+else if (positiveRemainder > 0 && positiveRemainder < 90)
+  speed += gravity
 ```
 
 </div>
@@ -497,12 +496,13 @@ game.run(options, () => {
 
 ```ts
 // 轻拍
-const tapSpeed = 0.3;
+const tapSpeed = 0.3
 if (Math.abs(deltaX) < 5 && deltaTime < 200) {
   const pageWidth = document.documentElement.clientWidth
-  speed = 
-    this.prePos.x > pageWidth / 2
-      ? -tapSpeed : tapSpeed;
+  speed
+    = this.prePos.x > pageWidth / 2
+      ? -tapSpeed
+      : tapSpeed
 }
 ```
 

@@ -3,7 +3,7 @@ import matter from 'gray-matter'
 import { logger } from './logger'
 import { formatJSON } from './utils'
 
-export const pagesFolder = 'src/pages'
+export const pagesFolder = 'playground/pages'
 const folders = fs.readdirSync(pagesFolder).filter(item => fs.statSync(`${pagesFolder}/${item}`).isDirectory())
 
 const indexes = folders.map((folder) => {

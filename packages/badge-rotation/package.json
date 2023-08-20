@@ -1,20 +1,20 @@
 {
   "name": "@explosions/badge-rotation",
-  "description": "旋转惯性动画",
   "version": "0.0.1",
+  "description": "旋转惯性动画",
   "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.es.js"
+    }
+  },
   "main": "dist/index.es.js",
   "module": "dist/index.es.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    }
-  },
   "scripts": {
     "build": "rollup -c",
     "clean": "rm -rf dist",
@@ -22,7 +22,7 @@
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^11.1.1",
-    "rollup": "^3.25.1"
+    "@rollup/plugin-typescript": "^11.1.2",
+    "rollup": "^3.28.0"
   }
 }

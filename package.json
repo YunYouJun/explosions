@@ -18,12 +18,11 @@
     "build": "pnpm -C playground build",
     "build:lib": "vite build --mode lib",
     "lint": "eslint .",
-    "index": "tsx scripts/update.ts",
     "postinstall": "npm run update:meta",
     "preview": "vite preview",
     "preview-https": "serve dist",
     "typecheck": "vue-tsc --noEmit",
-    "update:meta": "tsx scripts/update.ts"
+    "update:meta": "pnpm -C scripts run update"
   },
   "dependencies": {
     "@ctrl/tinycolor": "^3.6.0",

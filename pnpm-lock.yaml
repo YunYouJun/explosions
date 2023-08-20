@@ -164,6 +164,8 @@ importers:
         specifier: ^1.8.8
         version: 1.8.8(typescript@5.1.6)
 
+  scripts: {}
+
 packages:
 
   /@aashutoshrathi/word-wrap@1.2.6:

@@ -6,7 +6,7 @@ import pkg from '~/../package.json'
 
 const copyright = {
   name: 'Explosions',
-  repo: pkg.name,
+  repo: `YunYouJun/${pkg.name}`,
   author: pkg.author.name,
   color: 'rgb(194, 68, 72)',
 }

@@ -1,9 +1,10 @@
 import fs from 'node:fs'
+import { resolve } from 'node:path'
 import matter from 'gray-matter'
 import { logger } from './logger'
 import { formatJSON } from './utils'
 
-export const pagesFolder = 'playground/pages'
+export const pagesFolder = resolve(__dirname, '../playground/pages')
 const folders = fs.readdirSync(pagesFolder).filter(item => fs.statSync(`${pagesFolder}/${item}`).isDirectory())
 
 const indexes = folders.map((folder) => {
@@ -24,7 +25,7 @@ const indexes = folders.map((folder) => {
 })
 
 export function run() {
-  fs.writeFileSync('packages/metadata/indexes.json', formatJSON(indexes))
+  fs.writeFileSync(resolve(__dirname, '../packages/metadata/indexes.json'), formatJSON(indexes))
   logger.info(`Updated ${pagesFolder}/indexes.json.`)
 }
 

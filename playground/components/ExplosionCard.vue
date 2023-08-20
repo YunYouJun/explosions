@@ -1,22 +1,9 @@
 <script setup lang="ts">
 import { TinyColor } from '@ctrl/tinycolor'
+import type { Explosion } from '../../packages/types'
 
 const props = defineProps<{
-  explosion: {
-    emoji?: string
-    name?: string
-    color?: string
-    /**
-     * random gradient from color
-     */
-    gradient?: boolean
-    description?: string
-    textColor?: string
-    /**
-     * npm package name
-     */
-    npm: string
-  }
+  explosion: Explosion
 }>()
 
 const { explosion } = toRefs(props)

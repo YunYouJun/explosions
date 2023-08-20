@@ -1,11 +1,4 @@
 import rawIndexes from '../indexes.json'
-
-interface Explosion {
-  name: string
-  title?: string
-  emoji?: string
-  description?: string
-  color?: string
-}
+import type { Explosion } from '../../types'
 
 export const indexes: Explosion[] = rawIndexes

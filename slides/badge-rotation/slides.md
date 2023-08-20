@@ -43,7 +43,7 @@ title: 徽章旋转动画
 layout: two-cols
 ---
 
-# 长啥样
+<h1 class="gradient-text">长啥样</h1>
 
 进入 「蚂蚁森林」 左上角
 
@@ -55,11 +55,11 @@ layout: two-cols
 
 <br>
 
-- 拖动 3D 徽章 <mdi-police-badge class="inline" /> 
+- 拖动 3D 徽章 <mdi-police-badge class="inline" />
 - 根据拖动的速度徽章的惯性动画
   - 停止时总是停留在正/反面
 - 进入时的晃动动画
-- 轻拍晃动效果 <vaadin-touch class="inline"/> 
+- 轻拍晃动效果 <vaadin-touch class="inline"/>
 - 陀螺仪效果（晃动手机） <icon-park-outline-weixin-shake class="inline"/>
 
 <br>
@@ -68,23 +68,7 @@ layout: two-cols
 
 ::right::
 
-<video style="width: 46%" src="https://upyun.yunyoujun.cn/videos/demo/ant-forest-animal-badge-rotation.mp4" controls></video>
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
-}
-
-video {
-  margin: auto;
-}
-</style>
+<video class="m-auto" style="width: 46%" src="https://upyun.yunyoujun.cn/videos/demo/ant-forest-animal-badge-rotation.mp4" controls></video>
 
 ---
 
@@ -140,18 +124,6 @@ requestAnimationFrame[^1] 更优雅
 <br>
 
 [^1]: [window.requestAnimationFrame | MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame)
-
-<style>
-.footnotes-sep {
-  @apply opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
 
 ---
 
@@ -410,17 +382,7 @@ export function createInertiaAnimation(
 
 ---
 
-<style>
-.slidev-layout {
-  padding: 0.5rem 3rem ;
-}
-iframe {
-  transform: scale(0.8);
-  overflow: hidden;
-}
-</style>
-
-<div grid="~ cols-2 gap-4">
+<div grid="~ cols-2 gap-4" px-2 py-6>
 <div>
 
 ## <eos-icons-fork-outlined class="inline"/> 可复用
@@ -456,6 +418,7 @@ TypeScript + VueUse(PR) + CSS + createInertiaAnimation
 <a class="text-xs absolute" href="https://explosions.yunyoujun.cn">示例: https://explosions.yunyoujun.cn</a>
 
 <iframe
+  class="overflow-hidden transform scale-80"
     title="Explosion"
     width="100%"
     height="100%"

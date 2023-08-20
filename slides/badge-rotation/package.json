@@ -13,5 +13,9 @@
   },
   "slidev": {
     "colorSchema": "dark"
+  },
+  "devDependencies": {
+    "@iconify-json/eos-icons": "^1.1.7",
+    "@iconify-json/vaadin": "^1.1.6"
   }
 }

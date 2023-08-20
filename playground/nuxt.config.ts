@@ -4,8 +4,9 @@ import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
   ssr: false,
+
   alias: {
-    '@explosions/*': `${path.resolve(__dirname, '../packages')}/*/index.ts`,
+    '@explosions/*': `${path.resolve(__dirname, '../packages')}/*/src/index.ts`,
   },
 
   modules: [
@@ -64,6 +65,10 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  components: [
+    { path: '~/components', pathPrefix: false },
+  ],
 
   pwa,
 

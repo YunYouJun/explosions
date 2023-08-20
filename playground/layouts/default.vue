@@ -8,6 +8,5 @@
   >
     <NavMenu />
     <slot />
-    <BaseFooter />
   </main>
 </template>

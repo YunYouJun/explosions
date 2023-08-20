@@ -2,6 +2,7 @@
 emoji: 🟣
 description: 徽章旋转实现
 color: "#6441a5"
+gradient: true
 ---
 
 # 关于

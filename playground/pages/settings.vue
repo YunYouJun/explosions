@@ -4,6 +4,7 @@
       Settings
     </h1>
 
+    <DarkToggle />
     <ToggleDarkMode />
     <ToggleLanguage />
   </div>

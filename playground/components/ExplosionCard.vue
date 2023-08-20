@@ -6,6 +6,10 @@ const props = defineProps<{
     emoji?: string
     name?: string
     color?: string
+    /**
+     * random gradient from color
+     */
+    gradient?: boolean
     description?: string
     textColor?: string
   }
@@ -14,9 +18,17 @@ const props = defineProps<{
 const { explosion } = toRefs(props)
 
 const cardStyle = computed(() => {
+  const color = new TinyColor(explosion.value.color)
+  const textColor = explosion.value.textColor || (color.isDark() ? 'white' : 'black')
+
+  if (!explosion.value.gradient) {
+    return {
+      backgroundColor: explosion.value.color,
+      color: textColor,
+    }
+  }
+
   if (explosion.value.color) {
-    const color = new TinyColor(explosion.value.color)
-    const textColor = explosion.value.textColor || (color.isDark() ? 'white' : 'black')
     return {
       '--un-gradient-stops': `${color.spin(55).toHexString()}, ${explosion.value.color}`,
       'color': textColor,
@@ -25,6 +37,7 @@ const cardStyle = computed(() => {
   else {
     return {
       backgroundColor: 'rgba(255,255,255,0.6)',
+      color: textColor,
     }
   }
 })

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { indexes } from '@explosions/metadata'
+import { indexes } from '../../packages/metadata/src'
 
 const { t } = useI18n()
 

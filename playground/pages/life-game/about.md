@@ -2,6 +2,7 @@
 emoji: 🎮
 description: 康威生命游戏（CSS + DOM 版）
 color: black
+gradient: true
 ---
 
 # 关于

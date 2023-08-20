@@ -2,6 +2,7 @@
 emoji: 🫧
 title: P5.js Bubbles
 color: "#4171f1"
+gradient: true
 ---
 
 ## About

@@ -1,6 +1,11 @@
 {
   "name": "@explosions/fireworks",
   "version": "0.0.2",
+  "homepage": "https://explosions.yunyoujun.cn/fireworks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YunYouJun/explosions"
+  },
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "npm run build",
@@ -10,10 +15,5 @@
     "@ctrl/tinycolor": "^3.6.0",
     "@types/animejs": "^3.1.7",
     "animejs": "^3.2.1"
-  },
-  "homepage": "https://explosions.yunyoujun.cn/fireworks",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/YunYouJun/explosions"
   }
 }

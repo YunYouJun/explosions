@@ -12,6 +12,10 @@ const props = defineProps<{
     gradient?: boolean
     description?: string
     textColor?: string
+    /**
+     * npm package name
+     */
+    npm: string
   }
 }>()
 
@@ -70,9 +74,11 @@ const cardStyle = computed(() => {
         <div i-ri-information-line />
       </router-link>
 
-      <NuxtLink v-if="explosion.npm" 
-        class="icon-btn hover:text-red-600" m="x-1" 
-        :href="`https://npmjs.com/package/${explosion.npm}`" target="_blank">
+      <NuxtLink
+        v-if="explosion.npm"
+        class="icon-btn hover:text-red-600" m="x-1"
+        :href="`https://npmjs.com/package/${explosion.npm}`" target="_blank"
+      >
         <div i-ri-npmjs-line />
       </NuxtLink>
     </div>

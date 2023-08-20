@@ -1,5 +1,5 @@
 packages:
   - packages/**
-  - slides
-  - scripts
   - playground
+  - slides/**
+  - scripts

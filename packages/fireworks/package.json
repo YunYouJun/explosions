@@ -2,6 +2,7 @@
   "name": "@explosions/fireworks",
   "version": "0.0.1",
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "tsup"
   },
   "devDependencies": {

@@ -1,7 +1,9 @@
 ---
+# title: 徽章旋转动画
 theme: default
 background: https://upyun.yunyoujun.cn/images/code-bg.jpg
-class: text-center
+class: 'text-center'
+# https://sli.dev/custom/highlighters.html
 highlighter: shiki
 lineNumbers: false
 info: |
@@ -9,7 +11,7 @@ info: |
   蚂蚁森林 徽章旋转动画 技术分享
 
   [YunYouJun/explosions](https://github.com/YunYouJun/explosions)
-title: 徽章旋转动画
+css: unocss
 ---
 
 # 🐒 徽章旋转动画
@@ -129,7 +131,6 @@ requestAnimationFrame[^1] 更优雅
 
 # <ion-footsteps-outline class="inline"/> 步骤 
 
-
 <div grid="~ cols-2 gap-4">
 <div>
 
@@ -238,7 +239,7 @@ else if (positiveRemainder > 0 && positiveRemainder < 90)
 preload: false
 ---
 
-# <uiw-stop-o v-motion :initial="{ y: -100, x: -100, scale: 2 }" :enter="final" class="inline" /> 如何停止 
+<AnimatedIconTitle title="如何停止" />
 
 <div grid="~ cols-2 gap-4">
 <div>
@@ -246,14 +247,11 @@ preload: false
 ```ts
 function step(timestamp) {
   // 继续播放动画的条件（需要避免和后续的陀螺仪/拖动等冲突）
+  const isTolerated = (positiveRemainder > toleratedAngel) && (positiveRemainder < 180 - toleratedAngel)
   if (
     _this.playAnimation
     && (
-      Math.abs(speed) > toleratedSpeed
-      || (
-        positiveRemainder > toleratedAngel
-        && positiveRemainder < 180 - toleratedAngel
-      )
+      (Math.abs(speed) > toleratedSpeed) || isTolerated
     )
   ) {
     // 记录是否正在播放动画
@@ -295,22 +293,8 @@ function step(timestamp) {
 - `toleratedAngle`: 5 可以被忽略的角度
 
 </div>
-</div>
 
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
+</div>
 
 ---
 

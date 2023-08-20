@@ -20,7 +20,6 @@
     "vue-about-me": "^1.2.7"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.40.0",
     "@iconify-json/carbon": "^1.1.19",
     "@iconify-json/twemoji": "^1.1.12",
     "@nuxt/devtools": "^0.7.4",

@@ -12,9 +12,9 @@ useHead({
   }],
 })
 
-function toggleDark() {
-  color.preference = color.value === 'dark' ? 'light' : 'dark'
-}
+// function toggleDark() {
+//   color.preference = color.value === 'dark' ? 'light' : 'dark'
+// }
 
 const { t } = useI18n()
 </script>

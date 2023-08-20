@@ -5,7 +5,7 @@ import { appDescription } from './constants/index'
 export default defineNuxtConfig({
   ssr: false,
   alias: {
-    '@explosions/': `${path.resolve(__dirname, '../packages')}/`,
+    '@explosions/*': `${path.resolve(__dirname, '../packages')}/*/index.ts`,
   },
 
   modules: [

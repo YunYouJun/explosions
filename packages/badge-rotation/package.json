@@ -5,8 +5,8 @@
   "license": "MIT",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.es.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
     }
   },
   "main": "dist/index.es.js",

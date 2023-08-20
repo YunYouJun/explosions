@@ -163,7 +163,6 @@ requestAnimationFrame[^1] 更优雅
 
 拖动结束时 `touchEnd` 赋予徽章一个初速度 <whh-speed class="inline"/>
 
-
 ```ts
 // 滑动距离
 const deltaX
@@ -203,9 +202,9 @@ this.inertiaAnimation.run()
  * @param {number} timestamp
  */
 function step(timestamp) {
-  ...
-  speed *= u;
-  ...
+  // ...
+  speed *= u
+  // ...
 }
 ```
 
@@ -229,7 +228,7 @@ function step(timestamp) {
 /**
  * 水平重力影响系数
  */
-gravity: 0.008
+gravity = 0.008
 ```
 
 重力（加速度）在徽章的左右区间正负是不一样的。
@@ -276,28 +275,34 @@ preload: false
 function step(timestamp) {
   // 继续播放动画的条件（需要避免和后续的陀螺仪/拖动等冲突）
   if (
-    _this.playAnimation &&
-    (Math.abs(speed) > toleratedSpeed ||
-      (positiveRemainder > toleratedAngel 
-      && positiveRemainder < 180 - toleratedAngel))
+    _this.playAnimation
+    && (
+      Math.abs(speed) > toleratedSpeed
+      || (
+        positiveRemainder > toleratedAngel
+        && positiveRemainder < 180 - toleratedAngel
+      )
+    )
   ) {
     // 记录是否正在播放动画
-    _this.isPlaying = true;
+    _this.isPlaying = true
 
-    ...
+    // ...
     // 根据时间和速度，计算每一帧徽章应该旋转的角度
-    const deltaRotation = speed * elapsed;
-    setRotation(deltaRotation);
-    ...
+    const deltaRotation = speed * elapsed
+    setRotation(deltaRotation)
+    // ...
     // 继续播放动画
-    window.requestAnimationFrame(step);
-  } else {
-    _this.isPlaying = false;
+    window.requestAnimationFrame(step)
+  }
+  else {
+    _this.isPlaying = false
   }
 }
 ```
 
 </div>
+
 <div>
 
 拖拽时会与加速度动画产生冲突，我们需要通过状态来使得他们互相独立。
@@ -364,8 +369,7 @@ export interface InertiaAnimationOptions {
    * 最后可忽略的角度
    */
   toleratedAngel?: 3
-
-
+}
 ```
 
 </div>
@@ -375,6 +379,8 @@ export interface InertiaAnimationOptions {
 - 函数式而非 Class `createInertiaAnimation`
 
 ```ts
+export interface InertiaAnimation {
+  // ...
   /**
    * 获取旋转角度
    */
@@ -394,7 +400,7 @@ export function createInertiaAnimation(
   options: InertiaAnimationOptions
 ) {
   return {
-    ...
+    // ...
   }
 }
 ```
@@ -474,13 +480,13 @@ TypeScript + VueUse(PR) + CSS + createInertiaAnimation
 > 让用户知道它是可拖动的，动画冲突，所以应当共用一个实例
 
 ```ts
-const inertiaAnimation = createInertiaAnimation();
-...
+const inertiaAnimation = createInertiaAnimation()
+// ...
 game.run(options, () => {
-  inertiaAnimation.playAnimation = true;
+  inertiaAnimation.playAnimation = true
   // 赋予一个微小的初速度，并播放动画
-  inertiaAnimation.speed = 0.2;
-  inertiaAnimation.run();
+  inertiaAnimation.speed = 0.2
+  inertiaAnimation.run()
 })
 ```
 
@@ -560,12 +566,12 @@ if (Math.abs(deltaX) < 5 && deltaTime < 200) {
 - 网页 API [`deviceorientation`](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/deviceorientation_event) iOS 兼容问题
 
 ```ts
-window.addEventListener("deviceorientation", (event) => {
-    ...
-    // gamma: 从左到右
-    let deltaGamma = event.gamma - this.lastGamma;
-    ...
-}, true);
+window.addEventListener('deviceorientation', (event) => {
+  // ...
+  // gamma: 从左到右
+  const deltaGamma = event.gamma - this.lastGamma
+  // ...
+}, true)
 ```
 
 > 子贱师兄发现 iOS 下陀螺仪效果不生效，查询 caniuse 原来是 iOS 网页下还不支持。

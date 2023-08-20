@@ -7,9 +7,9 @@
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^0.22.7",
-    "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*"
+    "@slidev/cli": "^0.42.8",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest"
   },
   "slidev": {
     "colorSchema": "dark"

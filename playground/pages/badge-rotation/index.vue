@@ -3,7 +3,7 @@ import { computed, onMounted, ref } from 'vue'
 
 // import { usePointerSwipe } from '@vueuse/core'
 import { usePointerSwipe, useSwipe } from '@vueuse/core'
-import { createInertiaAnimation } from '@explosions/badge-rotation/index'
+import { createInertiaAnimation } from '@explosions/badge-rotation'
 
 const rotateY = ref(0)
 const badgeStyle = computed(() => {
@@ -17,7 +17,7 @@ const inertiaAnimation = createInertiaAnimation({
   getRotation() {
     return rotateY.value
   },
-  setRotation(deltaRotation) {
+  setRotation(deltaRotation: number) {
     rotateY.value -= deltaRotation
   },
 })

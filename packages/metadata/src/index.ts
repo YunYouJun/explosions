@@ -1,4 +1,4 @@
-import rawIndexes from './indexes.json'
+import rawIndexes from '../indexes.json'
 
 interface Explosion {
   name: string

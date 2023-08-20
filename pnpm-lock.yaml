@@ -33,6 +33,9 @@ importers:
       '@iconify-json/ri':
         specifier: ^1.1.12
         version: 1.1.12
+      '@iconify-json/simple-icons':
+        specifier: ^1.1.66
+        version: 1.1.66
       '@intlify/unplugin-vue-i18n':
         specifier: ^0.12.3
         version: 0.12.3(rollup@2.79.1)(vue-i18n@9.3.0-beta.26)
@@ -2101,6 +2104,12 @@ packages:
 
   /@iconify-json/ri@1.1.12:
     resolution: {integrity: sha512-s5VsyMWYuUuTB5bATJRoDQKGqo6W0dsxvOBrJI/P2H9QI7IAaAWl8zHxseSjoUGG6AwZwWwDMW9YPULPt+vA6w==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/simple-icons@1.1.66:
+    resolution: {integrity: sha512-sDqdt8xigpzmYqtQIDYNfhXUyNMwxW3OniklPmlV//9Jk4+iddFd5vT0rpSp4ivylp/lAwPwe22IR63KL0eSEg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

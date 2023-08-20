@@ -17,8 +17,11 @@ const indexes = folders.map((folder) => {
     const { data: frontmatter } = matter(md)
     info = Object.assign(info, frontmatter)
   }
-  catch {
-    logger.error(`${aboutMdPath} 不存在！`)
+  catch(e) {
+    console.log(e)
+    if (e.code !== 'ENOENT') {
+      logger.error(`读取 ${aboutMdPath} 失败！`)
+    }
   }
 
   return info

@@ -9,7 +9,7 @@ const cubeStyle = computed(() => {
 </script>
 
 <template>
-  <main class="container">
+  <main class="container" w-full>
     <div id="example-element" class="transition-all" :style="cubeStyle">
       <div class="front face">
         1

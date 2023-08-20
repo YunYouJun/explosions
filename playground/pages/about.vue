@@ -6,7 +6,7 @@
 
     <p text-left>
       <span>
-        <a class="text-2xl font-black font-serif" href="https://mzh.moegirl.org.cn/zh-hans/%E6%83%A0%E6%83%A0" target="_blank">
+        <a class="font-serif text-2xl font-black" href="https://mzh.moegirl.org.cn/zh-hans/%E6%83%A0%E6%83%A0" target="_blank">
           <span>惠惠</span>
         </a>
         是一个只能使用爆裂魔法，只想使用爆裂魔法的魔法师。喜欢的东西是爆裂魔法，特技是爆裂魔法，兴趣是爆裂魔法，唯一的真爱也是爆裂魔法。

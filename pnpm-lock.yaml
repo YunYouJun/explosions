@@ -149,7 +149,7 @@ importers:
         version: 0.55.2(eslint@8.47.0)(typescript@5.1.6)
       '@unocss/nuxt':
         specifier: ^0.55.2
-        version: 0.55.2(postcss@8.4.28)(rollup@2.79.1)(vite@4.4.9)(webpack@5.88.2)
+        version: 0.55.2(postcss@8.4.31)(rollup@2.79.1)(vite@4.4.9)(webpack@5.88.2)
       '@vite-pwa/nuxt':
         specifier: ^0.1.0
         version: 0.1.0(@nuxt/kit@3.6.5)(vite-plugin-pwa@0.16.4)
@@ -187,7 +187,7 @@ importers:
     dependencies:
       '@slidev/cli':
         specifier: 0.35.4
-        version: 0.35.4(@types/node@20.5.1)(esbuild@0.18.20)(postcss@8.4.28)(sass@1.66.1)
+        version: 0.35.4(@types/node@20.5.1)(esbuild@0.18.20)(postcss@8.4.31)(sass@1.66.1)
       '@slidev/theme-default':
         specifier: 0.21.2
         version: 0.21.2
@@ -2251,6 +2251,11 @@ packages:
     engines: {node: '>= 16'}
     dev: true
 
+  /@intlify/shared@9.4.1:
+    resolution: {integrity: sha512-A51elBmZWf1FS80inf/32diO9DeXoqg9GR9aUDHFcfHoNDuT46Q+fpPOdj8jiJnSHSBh8E1E+6qWRhAZXdK3Ng==}
+    engines: {node: '>= 16'}
+    dev: true
+
   /@intlify/unplugin-vue-i18n@0.12.3(rollup@2.79.1)(vue-i18n@9.3.0-beta.26):
     resolution: {integrity: sha512-0riPtSfTM58JmGNMmJho/aHD2z3K24BESYAmkLvKlo61/LbaPvnjYU1DbSbJEm6bSjE2oEjUj+di3QaYxXei/w==}
     engines: {node: '>= 14.16'}
@@ -3226,7 +3231,7 @@ packages:
       - supports-color
     dev: true
 
-  /@slidev/cli@0.35.4(@types/node@20.5.1)(esbuild@0.18.20)(postcss@8.4.28)(sass@1.66.1):
+  /@slidev/cli@0.35.4(@types/node@20.5.1)(esbuild@0.18.20)(postcss@8.4.31)(sass@1.66.1):
     resolution: {integrity: sha512-roPNDqASWMkUrwPDOUcco+90zE0EIrSXuRWfnAlSygIZMv8JgNvkGsoJQgoRvbpThPmNvWJ6DKBjp4L8YFzY+Q==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -3265,7 +3270,7 @@ packages:
       nanoid: 4.0.2
       open: 8.4.2
       plantuml-encoder: 1.4.0
-      postcss-nested: 5.0.6(postcss@8.4.28)
+      postcss-nested: 5.0.6(postcss@8.4.31)
       prismjs: 1.29.0
       prompts: 2.4.2
       resolve: 1.22.4
@@ -3886,7 +3891,7 @@ packages:
       sirv: 2.0.3
     dev: true
 
-  /@unocss/nuxt@0.55.2(postcss@8.4.28)(rollup@2.79.1)(vite@4.4.9)(webpack@5.88.2):
+  /@unocss/nuxt@0.55.2(postcss@8.4.31)(rollup@2.79.1)(vite@4.4.9)(webpack@5.88.2):
     resolution: {integrity: sha512-yfUwUq33U+2LNB72fj0tiUcnUDAt6dZjQ9GE6vQaqr8eUCCgVsBuGDcU2kV3bc3vID0MjZvUuZGBKv3LRG8iRQ==}
     dependencies:
       '@nuxt/kit': 3.6.5(rollup@2.79.1)
@@ -3902,7 +3907,7 @@ packages:
       '@unocss/reset': 0.55.2
       '@unocss/vite': 0.55.2(rollup@2.79.1)(vite@4.4.9)
       '@unocss/webpack': 0.55.2(rollup@2.79.1)(webpack@5.88.2)
-      unocss: 0.55.2(@unocss/webpack@0.55.2)(postcss@8.4.28)(rollup@2.79.1)(vite@4.4.9)
+      unocss: 0.55.2(@unocss/webpack@0.55.2)(postcss@8.4.31)(rollup@2.79.1)(vite@4.4.9)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -3911,7 +3916,7 @@ packages:
       - webpack
     dev: true
 
-  /@unocss/postcss@0.55.2(postcss@8.4.28):
+  /@unocss/postcss@0.55.2(postcss@8.4.31):
     resolution: {integrity: sha512-HJLGINNlQ3DGL9zRGuctX+mOVW2w7o8Wj89v3/2qTcqXBDpwfn1+KlxSjU9rsEPdE4Ur3MIcVXcJC0wz4+EwEA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -3922,7 +3927,7 @@ packages:
       css-tree: 2.3.1
       fast-glob: 3.3.1
       magic-string: 0.30.2
-      postcss: 8.4.28
+      postcss: 8.4.31
     dev: true
 
   /@unocss/preset-attributify@0.45.30:
@@ -4323,7 +4328,7 @@ packages:
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
       magic-string: 0.30.2
-      postcss: 8.4.28
+      postcss: 8.4.31
       source-map-js: 1.0.2
 
   /@vue/compiler-ssr@3.3.4:
@@ -7953,6 +7958,7 @@ packages:
 
   /hash-sum@2.0.0:
     resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
+    requiresBuild: true
 
   /he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
@@ -10296,13 +10302,13 @@ packages:
       postcss-selector-parser: 6.0.13
     dev: true
 
-  /postcss-nested@5.0.6(postcss@8.4.28):
+  /postcss-nested@5.0.6(postcss@8.4.31):
     resolution: {integrity: sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
     dependencies:
-      postcss: 8.4.28
+      postcss: 8.4.31
       postcss-selector-parser: 6.0.13
     dev: false
 
@@ -10475,6 +10481,14 @@ packages:
 
   /postcss@8.4.28:
     resolution: {integrity: sha512-Z7V5j0cq8oEKyejIKfpD8b4eBy9cwW2JWPk0+fB1HOAMsfHbnAXLLS+PfVWlzMSLQaWttKDt607I0XHmpE67Vw==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.6
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
+
+  /postcss@8.4.31:
+    resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.6
@@ -12050,7 +12064,7 @@ packages:
       - vite
     dev: false
 
-  /unocss@0.55.2(@unocss/webpack@0.55.2)(postcss@8.4.28)(rollup@2.79.1)(vite@4.4.9):
+  /unocss@0.55.2(@unocss/webpack@0.55.2)(postcss@8.4.31)(rollup@2.79.1)(vite@4.4.9):
     resolution: {integrity: sha512-+C8tFUFIEv40DpEhjA/Yv+RB5HZumkWiON2OlPyrbzapQ8x60F9TUwUS3pw7MlpxI6GfTCYwXKEE6DTGCm1SLA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -12066,7 +12080,7 @@ packages:
       '@unocss/cli': 0.55.2(rollup@2.79.1)
       '@unocss/core': 0.55.2
       '@unocss/extractor-arbitrary-variants': 0.55.2
-      '@unocss/postcss': 0.55.2(postcss@8.4.28)
+      '@unocss/postcss': 0.55.2(postcss@8.4.31)
       '@unocss/preset-attributify': 0.55.2
       '@unocss/preset-icons': 0.55.2
       '@unocss/preset-mini': 0.55.2
@@ -12652,7 +12666,7 @@ packages:
     dependencies:
       '@types/node': 20.5.1
       esbuild: 0.18.20
-      postcss: 8.4.28
+      postcss: 8.4.31
       rollup: 3.28.0
       sass: 1.66.1
     optionalDependencies:
@@ -12792,7 +12806,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.26
+      '@intlify/shared': 9.4.1
       '@intlify/vue-i18n-bridge': 0.8.0(vue-i18n@9.3.0-beta.26)
       '@intlify/vue-router-bridge': 0.8.0(vue@3.3.4)
       ufo: 1.2.0

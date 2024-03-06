@@ -1,9 +1,36 @@
 import path from 'node:path'
+import fs from 'node:fs'
+import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 
 import Components from 'unplugin-vue-components/vite'
 import Glsl from 'unplugin-glsl/vite'
 import UnoCSS from 'unocss/vite'
+import matter from 'gray-matter'
+import { MarkdownTransform } from './plugins/markdownTransform'
+
+function getExamplesSidebar(): DefaultTheme.SidebarItem {
+  const examplesDir = path.resolve(import.meta.dirname, '../examples')
+  const children = fs.readdirSync(examplesDir)
+    .filter((name) => {
+      return fs.statSync(path.resolve(examplesDir, name)).isDirectory()
+    })
+    .map((name) => {
+      const indexMdPath = path.resolve(examplesDir, name, 'index.md')
+      const indexMd = fs.readFileSync(indexMdPath, 'utf-8')
+      const title = matter(indexMd).data.title || name
+
+      return {
+        text: title,
+        link: `/examples/${name}/`,
+      }
+    })
+
+  return {
+    text: 'Examples',
+    items: children,
+  }
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -17,12 +44,7 @@ export default defineConfig({
     ],
 
     sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Fish Pond', link: '/examples/fish-pond/' },
-        ],
-      },
+      getExamplesSidebar(),
     ],
 
     socialLinks: [
@@ -32,6 +54,8 @@ export default defineConfig({
 
   vite: {
     plugins: [
+      MarkdownTransform(),
+
       Components({
         dirs: [
           path.resolve(__dirname, 'theme/components'),

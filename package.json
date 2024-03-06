@@ -25,7 +25,8 @@
     "update:meta": "pnpm -C scripts run update",
     "docs:dev": "pnpm -C docs dev",
     "docs:build": "pnpm -C docs build",
-    "docs:preview": "pnpm -C docs preview"
+    "docs:preview": "pnpm -C docs preview",
+    "pixi:example": "tsx scripts/pixi/index.ts example"
   },
   "dependencies": {
     "@ctrl/tinycolor": "^4.0.3",
@@ -40,10 +41,12 @@
     "@iconify-json/ri": "^1.1.20",
     "@iconify-json/simple-icons": "^1.1.94",
     "@intlify/unplugin-vue-i18n": "^2.0.0",
+    "@types/fs-extra": "^11.0.4",
     "@types/markdown-it-link-attributes": "^3.0.4",
     "@types/node": "^20.11.24",
     "@yunyoujun/logger": "^0.3.5",
     "eslint": "^8.57.0",
+    "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",
     "https-localhost": "^4.7.1",
     "markdown-it-link-attributes": "^4.0.1",

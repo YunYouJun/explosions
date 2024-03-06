@@ -1,5 +1,10 @@
 {
+  "type": "module",
   "scripts": {
     "update": "tsx update.ts"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "yargs": "^17.7.2"
   }
 }

@@ -1,6 +1,6 @@
 # Guide
 
-- [Examples](/examples/)
+- [Examples](/examples/fish-pond/)
 
 ## 创建 Pixi 示例页面
 

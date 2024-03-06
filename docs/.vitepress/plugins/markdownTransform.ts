@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import type { Plugin } from 'vite'
 
 export function MarkdownTransform(): Plugin {
@@ -5,7 +6,7 @@ export function MarkdownTransform(): Plugin {
     name: 'custom-md-transform',
     enforce: 'pre',
     async transform(code, id) {
-      if (!id.match(/\.md\b/) || !id.includes('docs/examples/'))
+      if (!id.match(/\.md\b/) || !id.includes('docs/examples/') || !id.endsWith('index.md'))
         return null
 
       const exampleId = id.split('docs/examples/')[1].split('/index.md')[0]

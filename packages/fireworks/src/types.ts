@@ -22,5 +22,5 @@ export interface Particle extends Point {
   color: string
   radius: number
   endPos: Point
-  draw(): void
+  draw: () => void
 }

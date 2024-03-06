@@ -17,14 +17,15 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
 
     '@yunlefun/vue/nuxt',
-    // '@nuxtjs/i18n',
+    '@nuxtjs/i18n',
+
+    'nuxt-monaco-editor',
   ],
 
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
     // but missing on offline, disabling extraction it until fixed
     payloadExtraction: false,
-    inlineSSRStyles: false,
     renderJsonPayloads: true,
     typedPages: true,
   },
@@ -66,9 +67,11 @@ export default defineNuxtConfig({
     },
   },
 
-  components: [
-    { path: '~/components', pathPrefix: false },
-  ],
+  components: {
+    dirs: [
+      { path: '~/components', prefix: '', pathPrefix: false, priority: 10 },
+    ],
+  },
 
   pwa,
 
@@ -76,4 +79,19 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en.yml',
+      },
+      {
+        code: 'zh-CN',
+        file: 'zh-CN.yml',
+      },
+    ],
+    lazy: true,
+    langDir: '../locales',
+    defaultLocale: 'zh-CN',
+  },
 })

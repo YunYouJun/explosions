@@ -129,7 +129,7 @@ requestAnimationFrame[^1] 更优雅
 
 ---
 
-# <ion-footsteps-outline class="inline"/> 步骤 
+# <ion-footsteps-outline class="inline"/> 步骤
 
 <div grid="~ cols-2 gap-4">
 <div>
@@ -163,7 +163,7 @@ this.inertiaAnimation.run()
 徽章旋转衰减
 
 - 方案1: 模拟物理重力，使用加速度来计算速度
-- 方案2: 模拟摩擦力，采用摩擦系数一样的衰减系数 
+- 方案2: 模拟摩擦力，采用摩擦系数一样的衰减系数
 
 <mdi-check class="text-green-400 inline" /> 方案 2 更简便、更符合逻辑，加速度另有他用
 
@@ -187,7 +187,6 @@ function step(timestamp) {
 ---
 
 # 🌍 平面重力
-
 
 <div grid="~ cols-2 gap-4" m="-r-50">
 
@@ -350,7 +349,6 @@ export interface InertiaAnimation {
  * 创建旋转惯性动画
  *
  * @param {*} options
- * @param {Function} callback 回调函数 设置状态
  */
 export function createInertiaAnimation(
   options: InertiaAnimationOptions
@@ -479,8 +477,8 @@ if (Math.abs(deltaX) < 5 && deltaTime < 200) {
 <noto-bug class="inline"/>
 <noto-bug class="inline"/>
 <noto-bug class="inline"/>
-<noto-bug class="inline"/> 
-<noto-bug class="inline"/> 
+<noto-bug class="inline"/>
+<noto-bug class="inline"/>
 <img class="inline" width="20" src="https://upyun.yunyoujun.cn/images/jian-yu-avatar.jpg">
 <img class="inline" width="20" src="https://upyun.yunyoujun.cn/images/jian-yu-avatar.jpg">
 <img class="inline" width="20" src="https://upyun.yunyoujun.cn/images/jian-yu-avatar.jpg">

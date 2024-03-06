@@ -32,7 +32,7 @@ export function getCoordsFromEvent(e: MouseEvent | TouchEvent): Point {
 
 /**
  * 设置画布尺寸
- * @default 默认为窗口尺寸
+ * @default
  */
 export function setCanvasSize(canvasEl: HTMLCanvasElement, width = window.innerWidth, height = window.innerHeight) {
   canvasEl.width = width
@@ -95,7 +95,6 @@ export function createFireworks(config: Partial<FireworksConfig>) {
    * 在指定位置创建粒子
    * @param {number} x
    * @param {number} y
-   * @returns
    */
   function createParticle(x: number, y: number) {
     const tinyColor = new TinyColor(colors[anime.random(0, colors.length - 1)])

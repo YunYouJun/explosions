@@ -16,6 +16,6 @@ const isDark = computed(() => color.value === 'dark')
 </script>
 
 <template>
-  <hr class="mt-5">
+  <hr my="8" op="20">
   <VueAboutMe :is-dark="isDark" :copyright="copyright" />
 </template>

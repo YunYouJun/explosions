@@ -31,6 +31,7 @@ let oldRotationY = 0
  * 触摸开始
  */
 function onTouchStart(distanceX: number, type = 'Swipe') {
+  // eslint-disable-next-line no-console
   console.debug(`[${type} Start]`, 'distanceX:', distanceX)
 
   inertiaAnimation.playAnimation = false
@@ -39,12 +40,14 @@ function onTouchStart(distanceX: number, type = 'Swipe') {
 }
 
 function onTouchMove(distanceX: number, type = 'Swipe') {
+  // eslint-disable-next-line no-console
   console.debug(`[${type}]`, 'distanceX:', distanceX)
 
   rotateY.value = oldRotationY - distanceX
 }
 
 function onTouchEnd(distanceX: number, type = 'Swipe') {
+  // eslint-disable-next-line no-console
   console.debug(`[${type} End]`, 'distanceX:', distanceX)
 
   const touchEndTime = new Date().valueOf()
@@ -97,6 +100,7 @@ onMounted(() => {
   inertiaAnimation.run()
 
   container.value?.addEventListener('touchcancel', () => {
+    // eslint-disable-next-line no-console
     console.debug('[Swipe Cancel]', 'distanceX:', distanceX.value)
 
     const touchEndTime = new Date().valueOf()

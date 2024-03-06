@@ -9,7 +9,7 @@ const interval = ref(250)
 // to clear interval
 const intervalId = ref()
 
-const lifeGrid = ref<boolean[][]>(new Array(rows.value).fill(new Array(cols.value).fill(false)))
+const lifeGrid = ref<boolean[][]>(Array(rows.value).fill(Array(cols.value).fill(false)))
 
 const containerStyle = computed(() => ({
   gridTemplateColumns: `repeat(${cols.value}, minmax(0, 1fr))`,
@@ -41,9 +41,8 @@ function nextLife(x: number, y: number, isSelfAlive: boolean) {
  * 生成随机生命
  */
 function generateRandomLife() {
-  lifeGrid.value = new Array(rows.value).fill(null).map(_r =>
-    new Array(cols.value).fill(null).map(_c => Math.random() > 0.5),
-  )
+  lifeGrid.value = Array.from({ length: rows.value }, () =>
+    Array.from({ length: cols.value }, () => Math.random() > 0.5))
 }
 
 function startLife() {
@@ -58,7 +57,7 @@ function pauseLife() {
 }
 
 function resetLife() {
-  lifeGrid.value = new Array(rows.value).fill(false).map(_ => new Array(cols.value).fill(false))
+  lifeGrid.value = Array(rows.value).fill(false).map(_ => Array(cols.value).fill(false))
 }
 
 onBeforeMount(() => {

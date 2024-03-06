@@ -12,8 +12,8 @@
     "build": "tsup"
   },
   "devDependencies": {
-    "@ctrl/tinycolor": "^3.6.0",
-    "@types/animejs": "^3.1.7",
-    "animejs": "^3.2.1"
+    "@ctrl/tinycolor": "^4.0.3",
+    "@types/animejs": "^3.1.12",
+    "animejs": "^3.2.2"
   }
 }

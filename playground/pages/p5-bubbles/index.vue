@@ -3,7 +3,7 @@ import { isClient } from '@vueuse/core'
 
 import type p5 from 'p5'
 
-interface Bubble { x: number; y: number; size: number; speed: number }
+interface Bubble { x: number, y: number, size: number, speed: number }
 
 function sketch(s: p5) {
   const bubbles: Bubble[] = []// holds bubble objects

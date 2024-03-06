@@ -4,7 +4,6 @@ import type { InertiaAnimationOptions } from './types'
  * 创建旋转惯性动画
  *
  * @param {*} options
- * @param {Function} callback 回调函数 设置状态
  */
 export function createInertiaAnimation(options: InertiaAnimationOptions) {
   return {
@@ -39,17 +38,17 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
     frameDuration: 16.67,
     /**
      * 获取旋转角度
-     * @returns
      */
     getRotation() {
+      // eslint-disable-next-line no-console
       console.log('您需要设置「getRotation」以获取旋转角度')
       return 0
     },
     /**
      * 设置旋转的动画
-     * @param {number} rotation
      */
-    setRotation() {
+    setRotation(_rotation: number) {
+      // eslint-disable-next-line no-console
       console.log('您需要设置「setRotation」以设置旋转角度')
     },
     ...options,
@@ -96,8 +95,8 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
         if (
           this.playAnimation
           && (Math.abs(speed) > toleratedSpeed
-            || (positiveRemainder > toleratedAngel
-              && positiveRemainder < 180 - toleratedAngel))
+          || (positiveRemainder > toleratedAngel
+          && positiveRemainder < 180 - toleratedAngel))
         ) {
           this.isPlaying = true
 

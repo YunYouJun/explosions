@@ -2,4 +2,6 @@
 title: Pixi Playground
 ---
 
-<PixiPlayground />
+Let's use [Pixi.js Playground](https://pixijs.com/playground).
+
+<!-- <PixiPlayground /> -->

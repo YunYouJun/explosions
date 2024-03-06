@@ -1,5 +1,6 @@
-import path from 'node:path'
+import path, { dirname } from 'node:path'
 import fs from 'node:fs'
+import { fileURLToPath } from 'node:url'
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 
@@ -9,8 +10,10 @@ import UnoCSS from 'unocss/vite'
 import matter from 'gray-matter'
 import { MarkdownTransform } from './plugins/markdownTransform'
 
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 function getExamplesSidebar(): DefaultTheme.SidebarItem {
-  const examplesDir = path.resolve(import.meta.dirname, '../examples')
+  const examplesDir = path.resolve(__dirname, '../examples')
   const children = fs.readdirSync(examplesDir)
     .filter((name) => {
       return fs.statSync(path.resolve(examplesDir, name)).isDirectory()

@@ -1,4 +1,3 @@
-import fs from 'node:fs'
 import type { Plugin } from 'vite'
 
 export function MarkdownTransform(): Plugin {

@@ -1,0 +1,5 @@
+---
+title: Pixi Playground
+---
+
+<PixiPlayground />

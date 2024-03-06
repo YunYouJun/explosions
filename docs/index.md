@@ -5,20 +5,20 @@ layout: home
 hero:
   name: "Explosions"
   text: "(∩ ◕_▩ )⊃━☆ Explosion！"
-  tagline: My great project tagline
+  tagline: 黑より黑く 暗より暗き漆黑に
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Explosion
+      link: /guide
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Playground
+      link: /playground
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 比黑色还要黑 暗之漆黑
+    details: 黑より黑く 暗より暗き漆黑に
+  - title: 融合著我之真红吧
+    details: 我が深红の混淆を望みたもう
+  - title: 觉醒的时刻已经到来
+    details: 觉醒のとき来たれり
 ---

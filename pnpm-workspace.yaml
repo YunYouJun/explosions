@@ -1,5 +1,6 @@
 packages:
-  - packages/**
-  - playground
-  - slides/**
+  - docs
   - scripts
+  - playground
+  - packages/**
+  - slides/**

@@ -23,9 +23,9 @@
     "preview-https": "serve dist",
     "typecheck": "vue-tsc --noEmit",
     "update:meta": "pnpm -C scripts run update",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:dev": "pnpm -C docs dev",
+    "docs:build": "pnpm -C docs build",
+    "docs:preview": "pnpm -C docs preview"
   },
   "dependencies": {
     "@ctrl/tinycolor": "^4.0.3",

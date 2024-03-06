@@ -18,9 +18,10 @@ const indexes = folders.map((folder) => {
     info = Object.assign(info, frontmatter)
   }
   catch (e) {
-    console.log(e)
-    if (e.code !== 'ENOENT')
-      logger.error(`读取 ${aboutMdPath} 失败！`)
+    if (e.code === 'ENOENT')
+      logger.error(`${aboutMdPath} 文件不存在！`)
+    else
+      console.log(e)
   }
 
   return info

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ref } from 'vue'
 import type * as Monaco from 'monaco-editor'
 
 const value = ref('')
@@ -9,10 +10,10 @@ const options: Monaco.editor.IStandaloneDiffEditorConstructionOptions = {
 </script>
 
 <template>
-  <div class="w-full h-full" grid="~ cols-2">
+  <div class="w-full h-full min-h-100 rounded shadow" grid="~ cols-2">
     <div class="h-full" font="mono">
       <ClientOnly>
-        <MonacoEditor v-model="value" class="h-full" lang="typescript" :options="options" />
+        <CustomMonacoEditor v-model="value" class="h-full" lang="typescript" :options="options" />
       </ClientOnly>
     </div>
     <div>

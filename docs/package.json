@@ -1,10 +1,18 @@
 {
+  "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "dependencies": {
     "vitepress": "1.0.0-rc.44"
+  },
+  "devDependencies": {
+    "monaco-editor": "^0.46.0",
+    "pixi.js": "^8.0.0",
+    "typescript": "^5.3.3",
+    "unplugin-glsl": "^0.1.9",
+    "unplugin-vue-components": "^0.26.0"
   }
 }

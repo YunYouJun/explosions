@@ -1,12 +1,12 @@
 {
-  "type": "module",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "vitepress": "1.0.0-rc.44"
+    "vitepress": "1.0.0-rc.44",
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "monaco-editor": "^0.46.0",

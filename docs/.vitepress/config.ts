@@ -8,6 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import Glsl from 'unplugin-glsl/vite'
 import UnoCSS from 'unocss/vite'
 import matter from 'gray-matter'
+import { splitVendorChunkPlugin } from 'vite'
 import { MarkdownTransform } from './plugins/markdownTransform'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -58,6 +59,7 @@ export default defineConfig({
   vite: {
     plugins: [
       MarkdownTransform(),
+      // splitVendorChunkPlugin(),
 
       Components({
         dirs: [

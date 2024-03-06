@@ -18,7 +18,9 @@ export function MarkdownTransform(): Plugin {
 import main from './index'
 </script>
 
-<PreviewPixi :init="main" />
+<ClientOnly>
+  <PreviewPixi :init="main" />
+</ClientOnly>
 
 <<< @/examples/${exampleId}/index.ts
 `

@@ -6,6 +6,8 @@ import './style.css'
 
 import 'uno.css'
 
+import PreviewPixi from './components/PreviewPixi.vue'
+
 export default {
   extends: DefaultTheme,
   Layout: () => {
@@ -16,5 +18,6 @@ export default {
   // eslint-disable-next-line unused-imports/no-unused-vars
   enhanceApp({ app, router, siteData }) {
     // ...
+    app.component('PreviewPixi', PreviewPixi)
   },
 } satisfies Theme

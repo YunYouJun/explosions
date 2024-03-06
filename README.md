@@ -9,6 +9,8 @@
 
 Explosions (许多发爆裂魔法！)
 
+- [Next Pixi Explosions (Only Pixi)](https://explosions.yunle.fun)
+
 ## With
 
 - [pixi.js](https://pixijs.com/)

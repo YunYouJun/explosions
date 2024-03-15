@@ -24,12 +24,12 @@
     "@iconify-json/twemoji": "^1.1.15",
     "@nuxt/devtools": "^1.0.8",
     "@nuxtjs/color-mode": "^3.3.2",
-    "@nuxtjs/i18n": "8.1.1",
+    "@nuxtjs/i18n": "8.2.0",
     "@pinia/nuxt": "^0.5.1",
     "@types/p5": "^1.7.6",
-    "@unocss/eslint-config": "^0.58.5",
-    "@unocss/nuxt": "^0.58.5",
-    "@vite-pwa/nuxt": "^0.5.0",
+    "@unocss/eslint-config": "^0.58.6",
+    "@unocss/nuxt": "^0.58.6",
+    "@vite-pwa/nuxt": "^0.6.0",
     "@vueuse/nuxt": "^10.9.0",
     "@yunlefun/vue": "^0.1.1",
     "consola": "^3.2.3",
@@ -37,8 +37,8 @@
     "nuxt": "^3.10.3",
     "nuxt-monaco-editor": "^1.2.7",
     "pinia": "^2.1.7",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.2",
     "vue-i18n": "^9.10.1",
-    "vue-tsc": "^2.0.5"
+    "vue-tsc": "^2.0.6"
   }
 }

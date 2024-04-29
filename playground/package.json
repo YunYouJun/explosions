@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@9.0.6",
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev",
@@ -13,32 +13,32 @@
     "start:generate": "npx serve .output/public"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.19",
+    "@headlessui/vue": "^1.7.21",
     "@vueuse/motion": "^2.1.0",
     "@yunlefun/ui": "^0.0.1",
-    "p5": "^1.9.1",
+    "p5": "^1.9.3",
     "vue-about-me": "^1.2.7"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "^1.1.31",
+    "@iconify-json/carbon": "^1.1.32",
     "@iconify-json/twemoji": "^1.1.15",
-    "@nuxt/devtools": "^1.0.8",
-    "@nuxtjs/color-mode": "^3.3.2",
-    "@nuxtjs/i18n": "8.2.0",
+    "@nuxt/devtools": "^1.2.0",
+    "@nuxtjs/color-mode": "^3.4.1",
+    "@nuxtjs/i18n": "8.3.1",
     "@pinia/nuxt": "^0.5.1",
     "@types/p5": "^1.7.6",
-    "@unocss/eslint-config": "^0.58.6",
-    "@unocss/nuxt": "^0.58.6",
+    "@unocss/eslint-config": "^0.59.4",
+    "@unocss/nuxt": "^0.59.4",
     "@vite-pwa/nuxt": "^0.6.0",
     "@vueuse/nuxt": "^10.9.0",
     "@yunlefun/vue": "^0.1.1",
     "consola": "^3.2.3",
-    "eslint": "^8.57.0",
-    "nuxt": "^3.10.3",
-    "nuxt-monaco-editor": "^1.2.7",
+    "eslint": "^9.1.1",
+    "nuxt": "^3.11.2",
+    "nuxt-monaco-editor": "^1.2.9",
     "pinia": "^2.1.7",
-    "typescript": "^5.4.2",
-    "vue-i18n": "^9.10.1",
-    "vue-tsc": "^2.0.6"
+    "typescript": "^5.4.5",
+    "vue-i18n": "^9.13.1",
+    "vue-tsc": "^2.0.14"
   }
 }

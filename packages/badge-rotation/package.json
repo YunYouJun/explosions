@@ -23,6 +23,6 @@
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
-    "rollup": "^4.13.0"
+    "rollup": "^4.17.1"
   }
 }

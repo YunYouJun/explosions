@@ -1,6 +1,6 @@
 import path from 'node:path'
-import fs from 'fs-extra'
 import consola from 'consola'
+import fs from 'fs-extra'
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
 const rootDir = path.resolve(__dirname, '../../')

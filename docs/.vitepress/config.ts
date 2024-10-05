@@ -1,14 +1,13 @@
-import path, { dirname } from 'node:path'
-import fs from 'node:fs'
-import { fileURLToPath } from 'node:url'
 import type { DefaultTheme } from 'vitepress'
-import { defineConfig } from 'vitepress'
-
-import Components from 'unplugin-vue-components/vite'
-import Glsl from 'unplugin-glsl/vite'
-import UnoCSS from 'unocss/vite'
+import fs from 'node:fs'
+import path, { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import matter from 'gray-matter'
-import { splitVendorChunkPlugin } from 'vite'
+
+import UnoCSS from 'unocss/vite'
+import Glsl from 'unplugin-glsl/vite'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vitepress'
 import { MarkdownTransform } from './plugins/markdownTransform'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))

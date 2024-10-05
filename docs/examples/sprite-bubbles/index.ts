@@ -99,7 +99,7 @@
 //     this.acceleration.mult(0)
 //     this.scale -= 0.005
 //   }
-//   this.isDead = function ()  {
+//   this.isDead = function () {
 //     return (this.scale < 0.0)
 //   }
 //   this.init()

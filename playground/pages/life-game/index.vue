@@ -9,7 +9,9 @@ const interval = ref(250)
 // to clear interval
 const intervalId = ref()
 
-const lifeGrid = ref<boolean[][]>(Array(rows.value).fill(Array(cols.value).fill(false)))
+const lifeGrid = ref<boolean[][]>(Array.from({ length: rows.value }, () =>
+  Array.from({ length: cols.value }, () => false)),
+)
 
 const containerStyle = computed(() => ({
   gridTemplateColumns: `repeat(${cols.value}, minmax(0, 1fr))`,
@@ -57,7 +59,8 @@ function pauseLife() {
 }
 
 function resetLife() {
-  lifeGrid.value = Array(rows.value).fill(false).map(_ => Array(cols.value).fill(false))
+  lifeGrid.value = Array.from({ length: rows.value }, () =>
+    Array.from({ length: cols.value }, () => false))
 }
 
 onBeforeMount(() => {

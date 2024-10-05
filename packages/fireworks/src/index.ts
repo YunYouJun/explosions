@@ -5,10 +5,10 @@
  * @author YunYouJun
  */
 
-import anime from 'animejs'
-import { TinyColor } from '@ctrl/tinycolor'
-
 import type { FireworksConfig, Particle, Point } from './types'
+
+import { TinyColor } from '@ctrl/tinycolor'
+import anime from 'animejs'
 
 /**
  * update pointer

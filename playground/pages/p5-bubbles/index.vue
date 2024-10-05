@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { isClient } from '@vueuse/core'
-
 import type p5 from 'p5'
+
+import { isClient } from '@vueuse/core'
 
 interface Bubble { x: number, y: number, size: number, speed: number }
 

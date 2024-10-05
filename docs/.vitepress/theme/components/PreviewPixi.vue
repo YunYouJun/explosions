@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
 import type { Application } from 'pixi.js'
+import { onMounted, ref } from 'vue'
 import { initPixiApp } from '../utils/pixi'
 
 const props = defineProps<{

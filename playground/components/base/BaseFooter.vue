@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import 'vue-about-me/style.css'
+import pkg from '~/../package.json'
 
 import VueAboutMe from 'vue-about-me'
-import pkg from '~/../package.json'
+import 'vue-about-me/style.css'
 
 const copyright = {
   name: 'Explosions',

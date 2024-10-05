@@ -95,8 +95,8 @@ export function createInertiaAnimation(options: InertiaAnimationOptions) {
         if (
           this.playAnimation
           && (Math.abs(speed) > toleratedSpeed
-          || (positiveRemainder > toleratedAngel
-          && positiveRemainder < 180 - toleratedAngel))
+            || (positiveRemainder > toleratedAngel
+              && positiveRemainder < 180 - toleratedAngel))
         ) {
           this.isPlaying = true
 

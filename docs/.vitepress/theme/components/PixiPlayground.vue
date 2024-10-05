@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
 import type * as Monaco from 'monaco-editor'
+import { ref } from 'vue'
 
 const value = ref('')
 

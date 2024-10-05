@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { TinyColor } from '@ctrl/tinycolor'
 import type { Explosion } from '../../packages/types'
+import { TinyColor } from '@ctrl/tinycolor'
 
 const props = defineProps<{
   explosion: Explosion

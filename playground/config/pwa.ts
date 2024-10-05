@@ -35,6 +35,8 @@ export const pwa: ModuleOptions = {
     ],
   },
   workbox: {
+    maximumFileSizeToCacheInBytes: 20 * 1024 * 1024,
+
     globPatterns: ['**/*.{js,css,html,txt,png,ico,svg}'],
     navigateFallbackDenylist: [/^\/api\//],
     navigateFallback: '/',

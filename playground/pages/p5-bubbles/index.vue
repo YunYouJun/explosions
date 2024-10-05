@@ -72,9 +72,8 @@ onMounted(async () => {
     return
 
   const { default: p5 } = await import('p5')
-  // @ts-expect-error new p5
-  // eslint-disable-next-line new-cap, unused-imports/no-unused-vars
-  const sketchInstance = new p5(sketch)
+  // eslint-disable-next-line new-cap, no-new
+  new p5(sketch)
 })
 </script>
 

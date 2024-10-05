@@ -94,4 +94,6 @@ export default defineNuxtConfig({
     langDir: '../locales',
     defaultLocale: 'zh-CN',
   },
+
+  compatibilityDate: '2024-10-06',
 })

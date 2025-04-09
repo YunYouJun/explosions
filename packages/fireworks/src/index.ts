@@ -85,7 +85,7 @@ export function createFireworks(config: Partial<FireworksConfig>) {
       diffuseRadius.min,
       diffuseRadius.max,
     )
-    const radius = [-1, 1][utils.random(0, 1)] * value
+    const radius = value * utils.randomPick([-1, 1])
     return {
       x: p.x + radius * Math.cos(angle),
       y: p.y + radius * Math.sin(angle),
@@ -98,8 +98,8 @@ export function createFireworks(config: Partial<FireworksConfig>) {
    * @param {number} y
    */
   function createParticle(x: number, y: number) {
-    const tinyColor = new TinyColor(colors[utils.random(0, colors.length - 1)])
-    tinyColor.setAlpha(utils.random(0.2, 0.8))
+    const tinyColor = new TinyColor(utils.randomPick(colors))
+    tinyColor.setAlpha(utils.random(0.2, 0.8, 2))
 
     const p: Particle = {
       x,

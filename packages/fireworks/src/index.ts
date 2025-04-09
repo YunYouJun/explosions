@@ -5,10 +5,11 @@
  * @author YunYouJun
  */
 
-import type { FireworksConfig, Particle, Point } from './types'
+import type { JSAnimation } from 'animejs'
 
+import type { FireworksConfig, Particle, Point } from './types'
 import { TinyColor } from '@ctrl/tinycolor'
-import anime from 'animejs'
+import { animate, createTimeline, utils } from 'animejs'
 
 /**
  * update pointer
@@ -79,12 +80,12 @@ export function createFireworks(config: Partial<FireworksConfig>) {
     return
 
   function setParticleDirection(p: Point) {
-    const angle = (anime.random(0, 360) * Math.PI) / 180
-    const value = anime.random(
+    const angle = (utils.random(0, 360) * Math.PI) / 180
+    const value = utils.random(
       diffuseRadius.min,
       diffuseRadius.max,
     )
-    const radius = [-1, 1][anime.random(0, 1)] * value
+    const radius = [-1, 1][utils.random(0, 1)] * value
     return {
       x: p.x + radius * Math.cos(angle),
       y: p.y + radius * Math.sin(angle),
@@ -97,14 +98,14 @@ export function createFireworks(config: Partial<FireworksConfig>) {
    * @param {number} y
    */
   function createParticle(x: number, y: number) {
-    const tinyColor = new TinyColor(colors[anime.random(0, colors.length - 1)])
-    tinyColor.setAlpha(anime.random(0.2, 0.8))
+    const tinyColor = new TinyColor(colors[utils.random(0, colors.length - 1)])
+    tinyColor.setAlpha(utils.random(0.2, 0.8))
 
     const p: Particle = {
       x,
       y,
       color: tinyColor.toRgbString(),
-      radius: anime.random(circleRadius.min, circleRadius.max),
+      radius: utils.random(circleRadius.min, circleRadius.max),
       endPos: setParticleDirection({ x, y }),
       draw: () => {},
     }
@@ -119,6 +120,10 @@ export function createFireworks(config: Partial<FireworksConfig>) {
       ctx.fill()
     }
     return p
+  }
+
+  interface Circle {
+    draw: () => void
   }
 
   function createCircle(x: number, y: number) {
@@ -147,9 +152,10 @@ export function createFireworks(config: Partial<FireworksConfig>) {
     return p
   }
 
-  function renderParticle(anim: anime.AnimeInstance) {
-    for (let i = 0; i < anim.animatables.length; i++) {
-      const target = anim.animatables[i].target as any as Particle
+  function renderParticle(anim: JSAnimation) {
+    // anim.draw()
+    // console.log('anim', anim)
+    for (const target of anim.targets) {
       target.draw()
     }
   }
@@ -161,53 +167,50 @@ export function createFireworks(config: Partial<FireworksConfig>) {
     for (let i = 0; i < numberOfParticles; i++)
       particles.push(createParticle(x, y))
 
-    anime
-      .timeline()
-      .add({
-        targets: particles,
-        x(p: Particle) {
-          return p.endPos.x
+    const timeline = createTimeline({})
+    timeline
+      .add(particles, {
+        x: (target: any) => {
+          return (target as Particle).endPos.x
         },
-        y(p: Particle) {
-          return p.endPos.y
+        y: (target: any) => {
+          return (target as Particle).endPos.y
         },
         radius: 0.1,
-        duration: anime.random(
+        duration: utils.random(
           animeDuration.min,
           animeDuration.max,
         ),
-        easing: 'easeOutExpo',
-        update: renderParticle,
+        ease: 'outExpo',
+        onUpdate: renderParticle,
       })
-      .add(
-        {
-          targets: circle,
-          radius: anime.random(orbitRadius.min, orbitRadius.max),
-          lineWidth: 0,
-          alpha: {
-            value: 0,
-            easing: 'linear',
-            duration: anime.random(600, 800),
-          },
-          duration: anime.random(1200, 1800),
-          easing: 'easeOutExpo',
-          update: renderParticle,
+      .add(circle, {
+        radius: utils.random(orbitRadius.min, orbitRadius.max),
+        lineWidth: 0,
+        alpha: {
+          to: 0,
+          ease: 'linear',
+          duration: utils.random(600, 800),
         },
-        0,
-      )
+        duration: utils.random(1200, 1800),
+        ease: 'outExpo',
+        onUpdate: (anim: JSAnimation) => {
+          (anim.targets[0] as Circle).draw()
+        },
+      }, 0)
   }
-
-  const render = anime({
-    duration: Number.POSITIVE_INFINITY,
-    update: () => {
-      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height)
-    },
-  })
 
   document.addEventListener(
     'mousedown',
     (e) => {
-      render.play()
+      animate({ n: 0 }, {
+        n: 1,
+        duration: 2000,
+        onUpdate() {
+          ctx?.clearRect(0, 0, canvasEl.width, canvasEl.height)
+        },
+      })
+
       const pos = getCoordsFromEvent(e)
       // for ios relative
       const rect = canvasEl.getBoundingClientRect()

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-
 // import { usePointerSwipe } from '@vueuse/core'
 import { usePointerSwipe, useSwipe } from '@vueuse/core'
+
+import { computed, onMounted, ref } from 'vue'
 import { createInertiaAnimation } from '../../../packages/badge-rotation/src'
 
 const rotateY = ref(0)
@@ -146,5 +146,5 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@import './index.scss';
+@use './index.scss';
 </style>

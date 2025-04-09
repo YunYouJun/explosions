@@ -18,5 +18,5 @@ onMounted(async () => {
 </script>
 
 <template>
-  <canvas id="pixi-canvas" ref="pixiCanvas" class="h-full w-full bg-black" />
+  <canvas id="pixi-canvas" ref="pixiCanvas" class="h-full w-full bg-black max-w-xl m-auto" />
 </template>

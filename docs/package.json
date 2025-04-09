@@ -7,13 +7,13 @@
   },
   "dependencies": {
     "vitepress": "1.1.4",
-    "vue": "^3.5.11"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "monaco-editor": "^0.52.0",
-    "pixi.js": "^8.4.1",
-    "typescript": "^5.6.2",
+    "monaco-editor": "^0.52.2",
+    "pixi.js": "^8.9.1",
+    "typescript": "^5.8.3",
     "unplugin-glsl": "^0.1.9",
-    "unplugin-vue-components": "^0.27.4"
+    "unplugin-vue-components": "^28.4.1"
   }
 }

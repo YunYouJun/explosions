@@ -91,7 +91,6 @@ export default defineNuxtConfig({
       },
     ],
     lazy: true,
-    langDir: '../locales',
     defaultLocale: 'zh-CN',
   },
 

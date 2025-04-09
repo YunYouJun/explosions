@@ -1,6 +1,7 @@
 import type { Application } from 'pixi.js'
+import type { Fish } from './addFishes'
 import { Assets, Sprite } from 'pixi.js'
-import { addFishes, animateFishes, type Fish } from './addFishes'
+import { addFishes, animateFishes } from './addFishes'
 
 // Store an array of fish sprites for animation.
 export const fishes: Fish[] = []

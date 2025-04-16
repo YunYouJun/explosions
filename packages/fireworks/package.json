@@ -1,6 +1,6 @@
 {
   "name": "@explosions/fireworks",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://explosions.yunyoujun.cn/fireworks",
   "repository": {
     "type": "git",
@@ -9,20 +9,21 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs"
     }
   },
-  "main": "dist/index.cjs",
+  "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "unbuild"
   },
-  "devDependencies": {
+  "dependencies": {
     "@ctrl/tinycolor": "^4.1.0",
-    "animejs": "^4.0.1",
+    "animejs": "^4.0.1"
+  },
+  "devDependencies": {
     "unbuild": "^3.5.0"
   }
 }

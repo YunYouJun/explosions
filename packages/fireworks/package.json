@@ -15,8 +15,12 @@
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublishOnly": "npm run build",
+    "dev": "unbuild --stub",
     "build": "unbuild"
   },
   "dependencies": {

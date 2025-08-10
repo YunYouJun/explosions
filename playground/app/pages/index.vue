@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { indexes } from '../../packages/metadata/src'
+import { indexes } from '../../../packages/metadata/src'
 
 const { t } = useI18n()
 

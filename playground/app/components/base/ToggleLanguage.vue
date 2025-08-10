@@ -7,7 +7,7 @@ async function toggleLocales() {
   // change to some real logic
   const locales: string[] = []
   // const locales = availableLocales
-  const newLocale = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+  const newLocale = locales[(locales.indexOf(locale.value) + 1) % locales.length] as 'en' | 'zh-CN'
   // await loadLanguageAsync(newLocale)
   locale.value = newLocale
 }

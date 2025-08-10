@@ -3,7 +3,7 @@
 import { usePointerSwipe, useSwipe } from '@vueuse/core'
 
 import { computed, onMounted, ref } from 'vue'
-import { createInertiaAnimation } from '../../../packages/badge-rotation/src'
+import { createInertiaAnimation } from '../../../../packages/badge-rotation/src'
 
 const rotateY = ref(0)
 const badgeStyle = computed(() => {

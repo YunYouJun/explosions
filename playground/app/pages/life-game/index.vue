@@ -34,7 +34,11 @@ const surroundingGrid = [
 function nextLife(x: number, y: number, isSelfAlive: boolean) {
   let count = 0
   surroundingGrid.forEach((item) => {
-    count += Number(isAlive(x + item[0], y + item[1]))
+    if (item) {
+      const deltaX = item[0] || 0
+      const deltaY = item[1] || 0
+      count += Number(isAlive(x + deltaX, y + deltaY))
+    }
   })
   return count === 3 || (isSelfAlive && count === 2)
 }
@@ -80,7 +84,10 @@ onBeforeMount(() => {
   >
     <template v-for="(row, r) in lifeGrid" :key="r">
       <template v-for="(item, c) in row" :key="c">
-        <LifeSquare :init-status="item" :x="r" :y="c" @click="lifeGrid[r][c] = !lifeGrid[r][c]" />
+        <LifeSquare
+          :init-status="item" :x="r" :y="c"
+          @click="lifeGrid[r]![c] = !lifeGrid[r]![c]"
+        />
       </template>
     </template>
   </div>

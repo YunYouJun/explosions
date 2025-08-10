@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { animateParticles } from '../../../packages/like-btn/src'
+import { animateParticles } from '../../../../packages/like-btn/src'
 
 const clickBtn = ref<HTMLElement | null>(null)
 

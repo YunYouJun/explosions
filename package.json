@@ -2,7 +2,7 @@
   "name": "explosions",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.14.0",
   "description": "(∩ ◕_▩ )⊃━☆ Explosion！",
   "author": {
     "email": "me@yunyoujun.cn",
@@ -31,31 +31,30 @@
   "dependencies": {
     "@ctrl/tinycolor": "^4.1.0",
     "prism-theme-vars": "^0.2.5",
-    "sass": "^1.86.3"
+    "sass": "^1.90.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.12.0",
-    "@iconify-json/carbon": "^1.2.8",
+    "@antfu/eslint-config": "^5.2.0",
+    "@iconify-json/carbon": "^1.2.11",
     "@iconify-json/icon-park-outline": "^1.2.2",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ri": "^1.2.5",
-    "@iconify-json/simple-icons": "^1.2.32",
-    "@intlify/unplugin-vue-i18n": "^6.0.5",
+    "@iconify-json/simple-icons": "^1.2.47",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it-link-attributes": "^3.0.5",
-    "@types/node": "^22.14.1",
+    "@types/node": "^24.2.1",
     "@yunyoujun/logger": "^0.3.5",
-    "eslint": "^9.24.0",
-    "fs-extra": "^11.3.0",
+    "eslint": "^9.33.0",
+    "fs-extra": "^11.3.1",
     "gray-matter": "^4.0.3",
     "https-localhost": "^4.7.1",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-prism": "^3.0.0",
-    "nuxt": "^3.16.2",
-    "pnpm": "^10.8.1",
+    "nuxt": "^4.0.3",
+    "pnpm": "^10.14.0",
     "star-markdown-css": "^0.5.3",
-    "tsx": "^4.19.3",
-    "typescript": "^5.8.3",
-    "vue-tsc": "^2.2.8"
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "vue-tsc": "^3.0.5"
   }
 }

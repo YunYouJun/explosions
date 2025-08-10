@@ -22,7 +22,7 @@
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^12.1.2",
-    "rollup": "^4.40.0"
+    "@rollup/plugin-typescript": "^12.1.4",
+    "rollup": "^4.46.2"
   }
 }

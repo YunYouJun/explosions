@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import { createFireworks } from '@explosions/fireworks'
 import { onMounted } from 'vue'
-import { createFireworks } from '../../../packages/fireworks/src'
 
 onMounted(() => {
   createFireworks({

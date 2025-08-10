@@ -19,15 +19,15 @@ export function getCoordsFromEvent(e: MouseEvent | TouchEvent): Point {
   const pointerX
     = 'clientX' in e
       ? e.clientX
-      : (e.touches[0] ? e.touches[0].clientX : e.changedTouches[0].clientX)
+      : (e.touches[0] ? e.touches[0].clientX : e.changedTouches[0]?.clientX)
   const pointerY
     = 'clientY' in e
       ? e.clientY
-      : (e.touches[0] ? e.touches[0].clientY : e.changedTouches[0].clientY)
+      : (e.touches[0] ? e.touches[0].clientY : e.changedTouches[0]?.clientY)
 
   return {
-    x: pointerX,
-    y: pointerY,
+    x: pointerX || 0,
+    y: pointerY || 0,
   }
 }
 
@@ -156,6 +156,7 @@ export function createFireworks(config: Partial<FireworksConfig>) {
     // anim.draw()
     // console.log('anim', anim)
     for (const target of anim.targets) {
+      // @ts-expect-error draw
       target.draw()
     }
   }

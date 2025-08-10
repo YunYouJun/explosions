@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { VueAboutMe } from 'vue-about-me'
 
-import pkg from '~/../package.json'
+import pkg from '~/../../package.json'
 import 'vue-about-me/style.css'
 
 const copyright = {

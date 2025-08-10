@@ -1,12 +1,12 @@
 import path from 'node:path'
-import { pwa } from './config/pwa'
-import { appDescription } from './constants/index'
+import { pwa } from './app/config/pwa'
+import { appDescription } from './app/constants/index'
 
 export default defineNuxtConfig({
   ssr: false,
 
   alias: {
-    '@explosions/*': `${path.resolve(__dirname, '../packages')}/*/src/index.ts`,
+    '@explosions/*': `${path.resolve(import.meta.dirname, '../packages')}/*/src/index.ts`,
   },
 
   modules: [
@@ -80,19 +80,20 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    defaultLocale: 'zh-CN',
     locales: [
       {
         code: 'en',
+        name: 'English',
         file: 'en.yml',
       },
       {
         code: 'zh-CN',
+        name: '简体中文',
         file: 'zh-CN.yml',
       },
     ],
-    lazy: true,
-    defaultLocale: 'zh-CN',
   },
 
-  compatibilityDate: '2024-10-06',
+  compatibilityDate: '2024-08-14',
 })

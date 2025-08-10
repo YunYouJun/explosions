@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { BottomMenuItem } from '@yunlefun/vue'
-import pkg from '~/../package.json'
+import pkg from '~/../../package.json'
 
 const { t } = useI18n()
 

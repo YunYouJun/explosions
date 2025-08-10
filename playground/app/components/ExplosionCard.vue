@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Explosion } from '../../packages/types'
+import type { Explosion } from '../../../packages/types'
 import { TinyColor } from '@ctrl/tinycolor'
 
 const props = defineProps<{

@@ -7,7 +7,7 @@ import { formatJSON } from './utils'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-export const pagesFolder = resolve(__dirname, '../playground/pages')
+export const pagesFolder = resolve(__dirname, '../playground/app/pages')
 const folders = fs.readdirSync(pagesFolder).filter(item => fs.statSync(`${pagesFolder}/${item}`).isDirectory())
 
 const indexes = folders.map((folder) => {
